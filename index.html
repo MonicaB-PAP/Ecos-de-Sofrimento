@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <!-- HEAD SECTION -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos de Sofrimento</title>
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css"> <!-- Note: CSS folder -->
+</head>
+
+<body>
+    <!-- NAVBAR SECTION -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="Amelia.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BANNER SECTION -->
+    <div class="d-flex justify-content-center">
+        <header class="banner">
+            <h1>Ecos de Sofrimento</h1>
+            <p>Um sussurro passado. Um ciclo presente. Um presságio futuro</p>
+        </header>
+    </div>
+
+    <!-- PETALS DECORATION -->
+    <div class="flower-petal" style="width:8px; height:8px; top:15%; left:10%;"></div>
+    <div class="flower-petal" style="width:5px; height:5px; top:25%; left:85%;"></div>
+    <div class="flower-petal" style="width:6px; height:6px; top:70%; left:15%;"></div>
+    <div class="flower-petal" style="width:7px; height:7px; top:80%; left:90%;"></div>
+
+    <!-- SYNOPSIS SECTION -->
+    <div class="d-flex justify-content-center">
+        <section class="synopsis py-5" id="sinopse">
+            <h3>Sinopse</h3>
+            <p class="highlight">Amélia era uma criança de alma doce, com uma rotina pacata...</p>
+            <p class="highlight">Num momento de desespero, Amélia encontrou forças para se reerguer...</p>
+        </section>
+    </div>
+
+    <!-- PAP BUTTON -->
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-primary btn-pap">PAP</button>
+    </div>
+
+    <!-- MAIN CONTENT CARDS SECTION -->
+    <div class="containers-wrapper">
+        <!-- STORY CARD -->
+        <div class="carousel-container">
+            <h3 class="text-center mb-4">HISTÓRIA</h3>
+            <div id="storyCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="character-card card story">
+                            <img src="IMG/icon-story.png" class="card-img-top" alt="História"> <!-- Note: IMG folder -->
+                            <div class="character-glow story-glow"></div>
+                            <div class="card-body">
+                                <h1 class="card-title">Ecos de Sofrimento</h1>
+                                <a href="historia.html" class="btn btn-primary btn-block">
+                                    <img src="IMG/icon-click.png" alt="Click" class="btn-icon"> <!-- Note: IMG folder -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARACTERS CAROUSEL -->
+        <div class="carousel-container">
+            <h3 class="text-center mb-4">PERSONAGENS</h3>
+            <div id="characterCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                <!-- ... character carousel items ... -->
+                <!-- Each character image uses IMG folder -->
+                <img src="IMG/icon-amelia.png" class="card-img-top" alt="Amélia">
+                <img src="IMG/icon-baal.png" class="card-img-top" alt="Baal">
+                <!-- etc... -->
+            </div>
+        </div>
+
+        <!-- GAMES CARD -->
+        <div class="carousel-container">
+            <h3 class="text-center mb-4">JOGOS</h3>
+            <div id="jogosCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                <!-- ... games content ... -->
+                <img src="IMG/icon-map.png" class="card-img-top" alt="Jogos"> <!-- Note: IMG folder -->
+            </div>
+        </div>
+
+        <!-- MAKING OF CARD -->
+        <div class="carousel-container">
+            <h3 class="text-center mb-4">BASTIDORES</h3>
+            <div id="bastidoresCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                <!-- ... making of content ... -->
+                <img src="IMG/icon-bastidor.png" class="card-img-top" alt="Bastidores"> <!-- Note: IMG folder -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS SECTION -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- CUSTOM SCRIPTS -->
+    <script>
+        // Petals generation script
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.body;
+            for (let i = 0; i < 12; i++) {
+                // ... petal generation code ...
+            }
+        });
+        
+        // Navbar active item highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

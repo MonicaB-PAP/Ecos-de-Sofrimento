@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bastidores - Ecos de Sofrimento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus+SC&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Scrollbar style */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060403;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9b9576a0;
+            border-radius: 5px;
+            border: 2px solid #1a1612;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ab9577;
+        }
+
+        /* Root variables */
+        :root {
+            --turquoise-dark: #3b3226;
+            --turquoise-light: #c49661;
+            --gothic-burgundy: #885e44;
+            --parchment: #f3e9d0;
+            --parchment-dark: #e0d5b8;
+            --ink-dark: #3b3226;
+            --text-ivory: #f8f4e6;
+            --transition-speed: 0.3s;
+        }
+
+        /* Body Styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+            background-color: #1a0e06;
+            background-image: 
+                radial-gradient(ellipse at 20% 20%, #4022114e 0%, transparent 40%),
+                linear-gradient(to bottom, #0e0603ca, #0e1410f2),
+                linear-gradient(to bottom, rgba(0,0,0,0.2) 1px, transparent 100px);
+            color: var(--text-ivory);
+            font-family: 'Cormorant Garamond', serif;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 70% 30%, rgba(136, 216, 192, 0.05) 0%, transparent 25%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(15, 10, 10, 0.95) !important;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--gothic-burgundy);
+            transition: all var(--transition-speed) ease;
+            padding: 0.8rem 1rem;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-family: 'Marcellus SC', serif;
+            color: var(--turquoise-light) !important;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .navbar.scrolled .navbar-brand {
+            font-size: 1.3rem;
+        }
+
+        .nav-link {
+            color: var(--turquoise-light) !important;
+            font-family: 'Marcellus SC', serif;
+            letter-spacing: 1px;
+            padding: 0.5rem 1rem !important;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #e74c3c;
+            transition: all var(--transition-speed) ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .nav-link.active {
+            color: #e74c3c !important;
+            font-weight: bold;
+        }
+
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-toggler {
+            border-color: var(--gothic-burgundy);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(196, 150, 97, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Main container */
+        .main-container {
+            display: flex;
+            min-height: calc(100vh - 180px);
+            padding: 2rem 1rem;
+            flex: 1;
+            margin-left: 250px; /* Espaço para o menu lateral */
+            transition: margin-left var(--transition-speed) ease;
+        }
+
+        /* Menu lateral fixo */
+        .side-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 250px;
+            height: calc(100vh - 70px);
+            background: rgba(15, 10, 10, 0.98);
+            border-right: 1px solid var(--gothic-burgundy);
+            padding: 1.5rem 0;
+            overflow-y: auto;
+            z-index: 990;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0 1rem;
+        }
+
+        .menu-item {
+            font-family: 'Marcellus SC', serif;
+            color: var(--turquoise-light) !important;
+            background: rgba(59, 50, 38, 0.5);
+            border: 1px solid var(--gothic-burgundy);
+            padding: 0.8rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: block;
+            position: relative;
+        }
+
+        .menu-item::after {
+            content: '›';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+
+        .menu-item:hover, .menu-item:focus, .menu-item.active {
+            background: var(--gothic-burgundy);
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            color: var(--text-ivory) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 10px;
+            z-index: 1000;
+            background: rgba(15, 10, 10, 0.9);
+            border: 1px solid var(--gothic-burgundy);
+            color: var(--turquoise-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Conteúdo da carta */
+        .letter-content {
+            flex: 1;
+            padding: 2rem;
+            position: relative;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+            background-color: var(--parchment);
+            background-image: 
+                linear-gradient(to bottom, var(--parchment) 0%, var(--parchment-dark) 100%);
+            border: 1px solid var(--gothic-burgundy);
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            color: var(--ink-dark);
+        }
+
+        .letter-content::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(139, 69, 19, 0.15);
+            pointer-events: none;
+            border-radius: 3px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(15, 10, 10, 0.9);
+            color: var(--turquoise-light);
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid var(--gothic-burgundy);
+            box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+            margin-left: 250px;
+            transition: margin-left var(--transition-speed) ease;
+        }
+
+        /* Estilos do conteúdo */
+        .section-title {
+            font-family: 'Marcellus SC', serif;
+            color: var(--gothic-burgundy);
+            border-bottom: 1px solid var(--gothic-burgundy);
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .swot-table, .symbolism-table, .power-table, .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .swot-table th, .swot-table td,
+        .symbolism-table th, .symbolism-table td,
+        .power-table th, .power-table td,
+        .stats-table th, .stats-table td {
+            border: 1px solid var(--gothic-burgundy);
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .swot-table th, .symbolism-table th,
+        .power-table th, .stats-table th {
+            background-color: rgba(136, 94, 68, 0.2);
+            font-family: 'Marcellus SC', serif;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .gallery-item {
+            border: 1px solid var(--gothic-burgundy);
+            padding: 0.8rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--gothic-burgundy);
+        }
+
+        .gallery-caption {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 3px solid var(--gothic-burgundy);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--ink-dark);
+            background-color: rgba(136, 94, 68, 0.05);
+            padding: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .inspiration-box {
+            background-color: rgba(136, 94, 68, 0.1);
+            border: 1px dashed var(--gothic-burgundy);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
+        }
+
+        .inspiration-title {
+            font-family: 'Marcellus SC', serif;
+            color: var(--gothic-burgundy);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .character-card {
+            border: 1px solid var(--gothic-burgundy);
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .character-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .character-name {
+            font-family: 'Marcellus SC', serif;
+            color: var(--gothic-burgundy);
+            border-bottom: 1px solid var(--gothic-burgundy);
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 100%;
+            margin: 2rem auto;
+            padding-left: 1rem;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--gothic-burgundy);
+            top: 0;
+            bottom: 0;
+            left: 1rem;
+        }
+
+        .timeline-item {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--parchment);
+            border: 3px solid var(--gothic-burgundy);
+            border-radius: 50%;
+            top: 0.5rem;
+            left: 0.5rem;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            padding: 1rem;
+            background-color: rgba(136, 94, 68, 0.1);
+            border: 1px solid var(--gothic-burgundy);
+            border-radius: 5px;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--gothic-burgundy);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Botão voltar ao topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(15, 10, 10, 0.9);
+            color: var(--turquoise-light);
+            border: 1px solid var(--gothic-burgundy);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-speed) ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--gothic-burgundy);
+            color: var(--text-ivory);
+            transform: translateY(-3px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .main-container {
+                margin-left: 0;
+            }
+            
+            .side-menu {
+                transform: translateX(-100%);
+                top: 70px;
+                height: calc(100vh - 70px);
+            }
+            
+            .side-menu.active {
+                transform: translateX(0);
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            footer {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .letter-content {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .swot-table, .symbolism-table, 
+            .power-table, .stats-table {
+                font-size: 0.85rem;
+            }
+            
+            .image-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem !important;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .swot-table, .symbolism-table, 
+            .power-table, .stats-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .character-card {
+                padding: 1rem;
+            }
+            
+            .character-name {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                    <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="bastidores.html">Bastidores</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Lateral Fixo -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-items">
+            <div class="menu-item active" onclick="showSection('conceito')">O Conceito</div>
+            <div class="menu-item" onclick="showSection('personagens')">Personagens</div>
+            <div class="menu-item" onclick="showSection('simbolismo')">Simbolismo</div>
+            <div class="menu-item" onclick="showSection('poderes')">Sistema de Poderes</div>
+            <div class="menu-item" onclick="showSection('elementos')">Elementos da História</div>
+            <div class="menu-item" onclick="showSection('processo')">Processo Criativo</div>
+            <div class="menu-item" onclick="showSection('estatisticas')">Estatísticas</div>
+        </div>
+    </div>
+
+    <!-- Botão para alternar menu em mobile -->
+    <button class="menu-toggle" id="menuToggle">›</button>
+
+    <!-- Container principal -->
+    <div class="main-container">
+        <!-- Conteúdo da Carta -->
+        <div class="letter-content" id="letterContent">
+            <!-- Seção 1: O Conceito -->
+            <div id="conceito" class="content-section">
+                <h2 class="section-title">O Conceito por Trás de "Ecos de Sofrimento"</h2>
+                <p>"Ecos de Sofrimento" nasceu da fascinação por histórias góticas que exploram a natureza humana e os ciclos de trauma. O objetivo era criar uma narrativa onde o mal não é apenas uma entidade externa, mas algo que se propaga através das gerações.</p>
+                
+                <h3>Análise SWOT da Ideia Original</h3>
+                <div class="table-responsive">
+                    <table class="swot-table">
+                        <tr>
+                            <th>Forças</th>
+                            <th>Fraquezas</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Boa premissa</li>
+                                    <li>Criatividade</li>
+                                    <li>Ambientação envolvente</li>
+                                    <li>Instiga a literatura</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Complexidade pode confundir alguns leitores</li>
+                                    <li>História tem partes com um ritmo mais lento</li>
+                                    <li>Conteúdos sensíveis para certos leitores</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Oportunidades</th>
+                            <th>Ameaças</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Expansão da história</li>
+                                    <li>Exploração de temas sociais</li>
+                                    <li>Adaptação para outros meios</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Recepção sensível à temática</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="quote">
+                    "A manipulação não é apenas uma fantasia assombrada, mas também a realidade de muitas pessoas que, por acreditarem tanto na bondade, serem cegas ao mal alheio, acabam por se envenenar, e assim expelir essa toxina para outros seres."
+                </div>
+                
+                <p>O título "Ecos de Sofrimento" refere-se à herança de Amélia, que é o trauma, que transpassou para a sua filha. O trauma da Amélia ecoa para a Bonnie e transforma-a num ser instável com sede de vingança.</p>
+            </div>
+            
+            <!-- Seção 2: Personagens -->
+            <div id="personagens" class="content-section" style="display:none;">
+                <h2 class="section-title">Análise dos Personagens</h2>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/600x300?text=Relação+entre+personagens" alt="Relação entre personagens" loading="lazy">
+                        <div class="gallery-caption">Relação entre os personagens</div>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Amélia</h3>
+                    <p><strong>Símbolo:</strong> Inocência e ingenuidade</p>
+                    <p><strong>Referência cultural:</strong> Mártir</p>
+                    <p>Representa a inocência e ingenuidade, uma mártir que cai nas garras do mal. Sua jornada simboliza como a bondade pode ser corrompida quando confrontada com a malícia pura.</p>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Baal (Beelzebub)</h3>
+                    <p><strong>Símbolo:</strong> Personificação e alegoria para o mal</p>
+                    <p><strong>Referência cultural:</strong> Diabo</p>
+                    <p>A personificação do mal, uma alegoria para o diabo. Baal manipula os eventos para seu próprio prazer, representando como o mal pode se infiltrar nas vidas das pessoas.</p>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Angela</h3>
+                    <p><strong>Símbolo:</strong> Anjo da guarda, reflexo do futuro de Amélia</p>
+                    <p><strong>Referência cultural:</strong> Anjo</p>
+                    <p>Representa o que Amélia poderia ter sido se tivesse feito escolhas diferentes. Serve como contraponto moral na história.</p>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Feiticeiro</h3>
+                    <p><strong>Símbolo:</strong> Transição para uma vida normal</p>
+                    <p><strong>Referência cultural:</strong> Ermita</p>
+                    <p>Mostra um caminho alternativo que Amélia poderia ter seguido, representando a possibilidade de redenção e vida pacífica.</p>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Bonnie (Benedicta)</h3>
+                    <p><strong>Símbolo:</strong> Hereditariedade dos traumas</p>
+                    <p><strong>Referência cultural:</strong> Fénix</p>
+                    <p>Herdeira dos traumas de Amélia, como uma Fénix renascida das cinzas, mas carregando o fardo do passado.</p>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Aldeões</h3>
+                    <p><strong>Símbolo:</strong> Contágio social, coletivo manipulável</p>
+                    <p><strong>Referência cultural:</strong> Inquisição</p>
+                    <p>Representam como as massas podem ser facilmente manipuladas pelo medo e pela superstição.</p>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Pais de Amélia</h3>
+                    <p><strong>Símbolo:</strong> Ignorância e vulnerabilidade intelectual</p>
+                    <p><strong>Referência cultural:</strong> Pôncio Pilatos</p>
+                    <p>Mostram como a ignorância e a falta de discernimento podem levar a consequências trágicas.</p>
+                </div>
+            </div>
+            
+            <!-- Seção 3: Simbolismo -->
+            <div id="simbolismo" class="content-section" style="display:none;">
+                <h2 class="section-title">Simbolismo na Narrativa</h2>
+                
+                <h3>Tabela de Simbolismo</h3>
+                <div class="table-responsive">
+                    <table class="symbolism-table">
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Símbolo</th>
+                            <th>Interpretação</th>
+                        </tr>
+                        <tr>
+                            <td>Bengala de ébano com serpente de esmeralda</td>
+                            <td>Controle e engano</td>
+                            <td>
+                                <p>A serpente presa nas mãos de Baal simboliza a esperança que Amélia agarrou, mas que foi uma ilusão.</p>
+                                <p>Também pode representar o próprio Baal restringindo Amélia, como a cobra que prende uma ave.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Contrato</td>
+                            <td>Corrupção do consentimento</td>
+                            <td>Um pacto faustiano onde os pais de Amélia foram manipulados a acreditar numa ilusão.</td>
+                        </tr>
+                        <tr>
+                            <td>Vestido verde e robe preto</td>
+                            <td>Liberdade vs. Luto</td>
+                            <td>O vestido representa a liberdade de Amélia, coberta pelo robe preto de penas de abutre que simboliza a morte.</td>
+                        </tr>
+                        <tr>
+                            <td>Carruagem de Baal</td>
+                            <td>Barco do Caronte</td>
+                            <td>Como na mitologia grega, transporta Amélia da vida pacata para um inferno simbólico.</td>
+                        </tr>
+                        <tr>
+                            <td>Olhos vermelhos luminosos</td>
+                            <td>Presença do mal</td>
+                            <td>Sempre que a escuridão é citada, os olhos aparecem - o mal escondido nas sombras.</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x450?text=Bengala+de+ébano" alt="Bengala de ébano" loading="lazy">
+                        <div class="gallery-caption">Bengala de ébano com serpente de esmeralda</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x300?text=Diagrama+de+Interações" alt="Diagrama de interações" loading="lazy">
+                        <div class="gallery-caption">Diagrama de Interações Mágicas</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Seção 4: Sistema de Poderes -->
+            <div id="poderes" class="content-section" style="display:none;">
+                <h2 class="section-title">Sistema de Poderes e Magia</h2>
+                
+                <div class="table-responsive">
+                    <table class="power-table">
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Fonte de Poder</th>
+                            <th>Limitações</th>
+                            <th>Custo Físico</th>
+                        </tr>
+                        <tr>
+                            <td>Fogo</td>
+                            <td>Emoções negativas</td>
+                            <td>Consome oxigénio</td>
+                            <td>Petrificação do corpo</td>
+                        </tr>
+                        <tr>
+                            <td>Bengala</td>
+                            <td>Más intenções, emoções negativas alheias</td>
+                            <td>Requer contato físico</td>
+                            <td>Drenagem de energia vital</td>
+                        </tr>
+                        <tr>
+                            <td>Cogumelo</td>
+                            <td>Natureza</td>
+                            <td>Eficaz apenas em situações simples</td>
+                            <td>Preconceito social</td>
+                        </tr>
+                        <tr>
+                            <td>Contrato</td>
+                            <td>Manipulação psicológica</td>
+                            <td>Requer consentimento (mesmo que manipulado)</td>
+                            <td>Perda de alma</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Diagrama de Interações Mágicas</h3>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x300?text=Diagrama+de+Interações+Mágicas" alt="Diagrama de interações mágicas" loading="lazy">
+                        <div class="gallery-caption">Sistema de interações entre os poderes</div>
+                    </div>
+                </div>
+                
+                <div class="quote">
+                    "O verdadeiro poder não está na magia, mas na capacidade de manipular as emoções e desejos alheios." - Baal
+                </div>
+            </div>
+            
+            <!-- Seção 5: Elementos da História -->
+            <div id="elementos" class="content-section" style="display:none;">
+                <h2 class="section-title">Elementos Chave da História</h2>
+                
+                <h3>Linha do Tempo</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Capítulo 1-3</div>
+                            <p>Introdução de Amélia e sua vida pacata na aldeia. Primeiros sinais da presença de Baal.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Capítulo 4-6</div>
+                            <p>O contrato faustiano é estabelecido. Amélia começa a perceber a verdade por trás das promessas de Baal.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Capítulo 7-9</div>
+                            <p>A transformação de Amélia e seu conflito interno. O papel de Angela como contraponto moral.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Capítulo 10-12</div>
+                            <p>O nascimento de Bonnie e a transferência do trauma. A aldeia se volta contra Amélia.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Capítulo 13-14</div>
+                            <p>O confronto final e as consequências. O ciclo se repete com Bonnie.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Objetos Simbólicos</h3>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x300?text=Carruagem+de+Baal" alt="Carruagem de Baal" loading="lazy">
+                        <div class="gallery-caption">Carruagem de Baal - Barco do Caronte</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x300?text=Vestido+Verde" alt="Vestido verde" loading="lazy">
+                        <div class="gallery-caption">Vestido verde vs robe preto</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Seção 6: Processo Criativo -->
+            <div id="processo" class="content-section" style="display:none;">
+                <h2 class="section-title">Processo de Criação</h2>
+                
+                <h3>Desenvolvimento da História</h3>
+                <p>A história passou por várias revisões (9 no total) e teve diferentes finais considerados:</p>
+                
+                <h4>Ideias para o Final:</h4>
+                <ol>
+                    <li>
+                        <strong>A Repetição do Ciclo:</strong>
+                        <p>Baal e Bonnie lutam, resultando na petrificação de Bonnie e aparente destruição de Baal. Na era moderna, uma criança observa a estátua de Bonnie quando um homem com bengala aparece (referência a Gravity Falls).</p>
+                    </li>
+                    <li>
+                        <strong>A Vingança:</strong>
+                        <p>História termina com Amelia morta e Bonnie devastada, jurando vingança contra Baal e a aldeia.</p>
+                    </li>
+                </ol>
+                
+                <h3>Elementos Descartados</h3>
+                <ul>
+                    <li>Cena onde Amelia considerava abortar por motivos religiosos</li>
+                    <li>Algumas cenas mais explícitas de violência</li>
+                    <li>Subplot adicional sobre a juventude de Baal</li>
+                </ul>
+                
+                <div class="quote">
+                    "Nao reajas, age normalmente, e quando for a hora, vamos atacar!" - Frase-chave que ecoa entre gerações
+                </div>
+            </div>
+            
+            <!-- Seção 7: Estatísticas -->
+            <div id="estatisticas" class="content-section" style="display:none;">
+                <h2 class="section-title">Estatísticas do Projeto</h2>
+                
+                <div class="table-responsive">
+                    <table class="stats-table">
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Estatística</th>
+                            <th>Comparativo</th>
+                        </tr>
+                        <tr>
+                            <td>Palavras Totais</td>
+                            <td>78,542</td>
+                            <td>≈ O Pequeno Príncipe</td>
+                        </tr>
+                        <tr>
+                            <td>Personagens Principais</td>
+                            <td>3</td>
+                            <td>+2 secundários</td>
+                        </tr>
+                        <tr>
+                            <td>Capítulos</td>
+                            <td>14</td>
+                            <td>5-7k palavras/cap</td>
+                        </tr>
+                        <tr>
+                            <td>Revisões Completas</td>
+                            <td>9</td>
+                            <td>3 editoriais, 6 autorais</td>
+                        </tr>
+                        <tr>
+                            <td>Horas de Escrita</td>
+                            <td>≈400</td>
+                            <td>3h/dia por 4 meses</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Gráfico de Produtividade Semanal</h3>
+                <div class="chart-container" style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px; margin: 20px 0;">
+                    <p style="text-align: center; font-family: 'Marcellus SC'; color: var(--gothic-burgundy);">Produção Semanal (Palavras)</p>
+                    <div style="display: flex; height: 200px; align-items: flex-end; justify-content: space-around; border-bottom: 1px solid var(--gothic-burgundy);">
+                        <div style="width: 20%; background-color: var(--gothic-burgundy); height: 45%; position: relative;">
+                            <div style="position: absolute; bottom: -25px; width: 100%; text-align: center;">Sem1</div>
+                            <div style="position: absolute; top: -25px; width: 100%; text-align: center;">4500</div>
+                            <div style="position: absolute; top: -50px; width: 100%; text-align: center; font-size: 0.8rem;">Crise criativa</div>
+                        </div>
+                        <div style="width: 20%; background-color: var(--gothic-burgundy); height: 62%; position: relative;">
+                            <div style="position: absolute; bottom: -25px; width: 100%; text-align: center;">Sem2</div>
+                            <div style="position: absolute; top: -25px; width: 100%; text-align: center;">6200</div>
+                            <div style="position: absolute; top: -50px; width: 100%; text-align: center; font-size: 0.8rem;">Breakthrough</div>
+                        </div>
+                        <div style="width: 20%; background-color: var(--gothic-burgundy); height: 38%; position: relative;">
+                            <div style="position: absolute; bottom: -25px; width: 100%; text-align: center;">Sem3</div>
+                            <div style="position: absolute; top: -25px; width: 100%; text-align: center;">3800</div>
+                            <div style="position: absolute; top: -50px; width: 100%; text-align: center; font-size: 0.8rem;">Revisão</div>
+                        </div>
+                        <div style="width: 20%; background-color: var(--gothic-burgundy); height: 55%; position: relative;">
+                            <div style="position: absolute; bottom: -25px; width: 100%; text-align: center;">Sem4</div>
+                            <div style="position: absolute; top: -25px; width: 100%; text-align: center;">5500</div>
+                            <div style="position: absolute; top: -50px; width: 100%; text-align: center; font-size: 0.8rem;">Finalização</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Inspirações</h3>
+                <div class="inspiration-box">
+                    <div class="inspiration-title">Música</div>
+                    <p><strong>Imagine Dragons:</strong> "Enemy" e "Warriors" para criação de cenários atmosféricos.</p>
+                </div>
+                
+                <div class="inspiration-box">
+                    <div class="inspiration-title">Séries/Jogos</div>
+                    <p><strong>League of Legends:</strong> A transformação de Jinx de personagem inocente para vilã.</p>
+                    <p><strong>Gravity Falls:</strong> Cena final com a estátua de Bill Cipher.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão voltar ao topo -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const sideMenu = document.getElementById('sideMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('active');
+                menuToggle.textContent = sideMenu.classList.contains('active') ? '‹' : '›';
+            });
+            
+            // Scroll navbar effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Back to top button
+                const backToTop = document.getElementById('backToTop');
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            // Back to top functionality
+            document.getElementById('backToTop').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Mostra a primeira seção por padrão
+            showSection('conceito');
+        });
+        
+        function showSection(sectionId) {
+            // Esconde todas as seções
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Remove a classe active de todos os itens do menu
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Mostra a seção selecionada
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // Adiciona a classe active ao item do menu correspondente
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                if (item.getAttribute('onclick').includes(sectionId)) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Fecha o menu em mobile
+            if (window.innerWidth <= 992) {
+                document.getElementById('sideMenu').classList.remove('active');
+                document.getElementById('menuToggle').textContent = '›';
+            }
+            
+            // Scroll suave para o topo da seção
+            window.scrollTo({
+                top: document.querySelector('.main-container').offsetTop - 70,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
