@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="icon.png" type="image/png">
+    <title>Feiticeiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mago.css">
+</head>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="main-container">
+        <!-- Bookmarks -->
+        <div class="bookmarks">
+            <a href="Amelia.html" class="bookmark lilac" title="Amélia"></a>
+            <a href="Baal.html" class="bookmark red" title="Baal"></a>
+            <a href="Angy.html" class="bookmark turquoise" title="Ângela"></a>
+            <a href="Mago.html" class="bookmark dark-blue" title="Feiticeiro"></a>
+        </div>
+        
+        <!-- Conteúdo do livro (carta branca) -->
+        <div class="letter-container">
+            <h2 class="letter-title">Feiticeiro</h2>
+            
+            <div class="letter-content">
+                <p>Poucos conhecem seu nome verdadeiro — e os que o souberam, já não vivem para contar a história. Ele é conhecido apenas como o Feiticeiro.</p>
+
+                <p>Costuma viver isolado, longe de qualquer olhar curioso. Ninguém sabe de onde veio, nem há registros que revelem sua origem. Diz-se que já foi um homem comum, talvez um eremita, talvez um estudioso, mas algo se perdeu nele quando tentou compreender o que não devia. Outros afirmam que nasceu do próprio bosque, moldado pela Terra-Mãe, com um propósito sagrado: purificar este mundo.</p>
+
+                <p>Ele conhece Baal. Não no sentido social, mas no mais profundo e essencial. Reconhece nele algo antigo, familiar e perigosamente imortal.</p>
+
+                <p>As plantas escutam suas palavras, e o vento se transforma com o simples ato de sua respiração. Ele não é apenas um homem; ele é a personificação da Mãe Natureza em sua forma mais pura e selvagem.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Navegação entre páginas
+        document.querySelectorAll('.bookmark').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                window.location.href = href;
+            });
+        });
+
+        // Destacar item ativo na navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Destacar bookmark ativo
+            document.querySelectorAll('.bookmark').forEach(bookmark => {
+                if (bookmark.getAttribute('href') === currentPage) {
+                    bookmark.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

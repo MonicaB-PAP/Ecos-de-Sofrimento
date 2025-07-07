@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="icon.png" type="image/png">
+    <title>Ecos de Sofrimento - Labirinto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="laby.css">
+<body>
+    <!-- Container para as estrelas do background -->
+    <div class="stars-background">
+        <div class="star star-1">★</div>
+        <div class="star star-2">☆</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">☆</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">☆</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">☆</div>
+        <div class="star star-9">★</div>
+        <div class="star star-10">☆</div>
+        <div class="star star-11">★</div>
+        <div class="star star-12">☆</div>
+        <div class="star star-13">★</div>
+        <div class="star star-14">☆</div>
+        <div class="star star-15">★</div>
+        <div class="star star-16">☆</div>
+        <!-- Novas estrelas adicionadas -->
+        <div class="star star-17">★</div>
+        <div class="star star-18">☆</div>
+        <div class="star star-19">★</div>
+        <div class="star star-20">☆</div>
+        <div class="star star-21">★</div>
+        <div class="star star-22">☆</div>
+        <div class="star star-23">★</div>
+        <div class="star star-24">☆</div>
+        <div class="star star-25">★</div>
+        <div class="star star-26">☆</div>
+        <div class="star star-27">★</div>
+        <div class="star star-28">☆</div>
+        <div class="star star-29">★</div>
+        <div class="star star-30">☆</div>
+    </div>
+
+    <!-- Navbar -->
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mt-5 pt-5">
+        <!-- Moldura de Jogos -->
+        <div class="game-frame">
+            <!-- Conteúdo -->
+            <div class="game-content">
+                <h1 class="game-title">Encontra a Saída!</h1>
+                
+                <div class="maze-container">
+                    <div class="game-wrapper">
+                        <div class="loading"></div>
+                        <img id="maze" src="maze.png" alt="Labirinto">
+                        <img id="character" src="glp.png" alt="Personagem">
+                        <svg class="trail-path" id="trail"></svg>
+                    </div>
+                    <div class="game-over-message" id="game-over-message">GAME OVER</div>
+                    <div class="mini-map-container">
+                        <div class="mini-map">
+                            <img class="mini-map-bg" src="maze.png" alt="Mini Mapa">
+                            <svg class="mini-map-trail" id="mini-trail"></svg>
+                            <div class="mini-map-character" id="mini-char"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione isto antes do </body> -->
+<div class="map-overlay" id="map-overlay"></div>
+                <!-- Controles de toque abaixo do labirinto -->
+                <div class="touch-controls">
+                    <div class="touch-arrow" id="up-arrow">↑</div>
+                    <div class="touch-arrow" id="left-arrow">←</div>
+                    <div class="touch-arrow" id="right-arrow">→</div>
+                    <div class="touch-arrow" id="down-arrow">↓</div>
+                </div>
+                
+                <!-- Botões R e M para mobile -->
+                <div class="mobile-controls">
+                    <button class="mobile-control-button" id="reset-button">R - Resetar</button>
+                    <button class="mobile-control-button" id="map-button">M - Mapa</button>
+                </div>
+                
+                <div class="maze-instructions">
+                    <p> para mover | R para resetar | M para mapa</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="jogos.html" class="game-button">Voltar aos Jogos</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+   
+    <script>
+        // Destacar item ativo na navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Inicializa o jogo do labirinto
+            initMazeGame();
+        });
+
+        // Código do Labirinto
+        function initMazeGame() {
+            class MazeGame {
+                constructor() {
+                    this.maze = document.getElementById('maze');
+                    this.character = document.getElementById('character');
+                    this.gameContainer = document.querySelector('.maze-container');
+                    this.gameWrapper = document.querySelector('.game-wrapper');
+                    this.trailSvg = document.getElementById('trail');
+                    this.miniTrailSvg = document.getElementById('mini-trail');
+                    this.miniChar = document.getElementById('mini-char');
+                    this.loading = document.querySelector('.loading');
+                    this.resetButton = document.getElementById('reset-button');
+                    this.mapButton = document.getElementById('map-button');
+                    this.miniMapContainer = document.querySelector('.mini-map-container');
+                    this.mapOverlay = document.getElementById('map-overlay');
+                    
+                    this.leftArrow = document.getElementById('left-arrow');
+                    this.upArrow = document.getElementById('up-arrow');
+                    this.downArrow = document.getElementById('down-arrow');
+                    this.rightArrow = document.getElementById('right-arrow');
+                    
+                    this.state = {
+                        position: { x: 0, y: 0 },
+                        charSize: { width: 600, height: 600 },
+                        mazeSize: { width: 0, height: 0 },
+                        moveSpeed: 8,
+                        isInitialized: false,
+                        miniMapVisible: true,
+                        trailPoints: [],
+                        miniTrailPoints: [],
+                        isMobile: window.innerWidth <= 768,
+                        moveInterval: null,
+                        activeDirection: null,
+                        movementBounds: {
+                            minX: 0,
+                            maxX: 0,
+                            minY: 0,
+                            maxY: 0
+                        },
+                        lastDirection: null,
+                        lastPosition: null,
+                        mazeCanvas: null,
+                        mazeCtx: null,
+                        collisionCheckPoints: [],
+                        trailCollisionCheckInterval: 3,
+                        gamePaused: false
+                    };
+                    
+                    this.init();
+                }
+
+                init() {
+                    this.maze.onload = () => this.setupGame();
+                    if (this.maze.complete) this.setupGame();
+                    
+                    window.addEventListener('resize', () => this.handleResize());
+                    document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+                    document.addEventListener('keyup', (e) => this.handleKeyRelease(e));
+                    
+                    this.setupTouchControls();
+                    this.setupMapClickHandler();
+                    
+                    // Configurar botões mobile
+                    if (this.resetButton) {
+                        this.resetButton.addEventListener('click', () => this.resetGame());
+                    }
+                    
+                    if (this.mapButton) {
+                        this.mapButton.addEventListener('click', () => this.toggleMiniMap());
+                    }
+                }
+
+                setupMapClickHandler() {
+                    this.miniMapContainer.addEventListener('click', () => this.toggleMapSize());
+                    this.mapOverlay.addEventListener('click', () => this.closeExpandedMap());
+                }
+
+                toggleMapSize() {
+                    this.miniMapContainer.classList.toggle('expanded');
+                    const isExpanded = this.miniMapContainer.classList.contains('expanded');
+                    this.mapOverlay.style.display = isExpanded ? 'block' : 'none';
+                    this.state.gamePaused = isExpanded;
+                    
+                    // Recalcular todos os pontos do mini mapa quando o tamanho muda
+                    this.recalculateMiniTrailPoints();
+                    this.redrawTrails();
+                }
+
+                recalculateMiniTrailPoints() {
+    const miniMapWidth = this.miniMapContainer.clientWidth;
+    const miniMapHeight = this.miniMapContainer.clientHeight;
+    const scaleX = miniMapWidth / this.state.mazeSize.width;
+    const scaleY = miniMapHeight / this.state.mazeSize.height;
+                    
+                    this.state.miniTrailPoints = this.state.trailPoints.map(point => ({
+        x: Math.round(point.x * scaleX * 100) / 100,
+        y: Math.round(point.y * scaleY * 100) / 100
+                    }));
+                    
+                    // Atualizar também a posição do personagem no mini mapa
+                    this.updateMiniMap();
+                }
+
+                closeExpandedMap() {
+                    this.miniMapContainer.classList.remove('expanded');
+                    this.mapOverlay.style.display = 'none';
+                    this.state.gamePaused = false;
+                    this.recalculateMiniTrailPoints();
+                    this.redrawTrails();
+                }
+
+                setupGame() {
+                    this.loading.style.display = 'none';
+                    
+                    this.state.mazeSize = {
+                        width: this.maze.naturalWidth,
+                        height: this.maze.naturalHeight
+                    };
+                    
+                    this.gameWrapper.style.width = `${this.state.mazeSize.width}px`;
+                    this.gameWrapper.style.height = `${this.state.mazeSize.height}px`;
+                    
+                    // Posição inicial no centro
+                    this.state.position = {
+                        x: this.state.mazeSize.width / 2,
+                        y: this.state.mazeSize.height / 2
+                    };
+                    
+                    this.state.lastPosition = {...this.state.position};
+                    
+                    this.state.movementBounds = {
+                        minX: 0,
+                        maxX: this.state.mazeSize.width,
+                        minY: 0,
+                        maxY: this.state.mazeSize.height
+                    };
+                    
+                    this.character.style.width = `${this.state.charSize.width}px`;
+                    this.character.style.height = `${this.state.charSize.height}px`;
+                    
+                    // Criar canvas para detecção de colisão
+                    this.state.mazeCanvas = document.createElement('canvas');
+                    this.state.mazeCanvas.width = this.state.mazeSize.width;
+                    this.state.mazeCanvas.height = this.state.mazeSize.height;
+                    this.state.mazeCtx = this.state.mazeCanvas.getContext('2d', { willReadFrequently: true });
+                    this.state.mazeCtx.drawImage(this.maze, 0, 0);
+                    
+                    this.prepareCollisionCheckPoints();
+                    this.addTrailPoint(this.state.position.x, this.state.position.y);
+                    
+                    this.state.isInitialized = true;
+                    this.updateCharacterPosition();
+                    this.centerCamera(true);
+                }
+
+                prepareCollisionCheckPoints() {
+                    const radius = this.state.charSize.width / 2;
+                    const points = [];
+                    
+                    // Pontos ao redor do personagem para verificar colisão
+                    for (let angle = 0; angle < 360; angle += 30) {
+                        const rad = angle * (Math.PI / 180);
+                        points.push({
+                            x: Math.cos(rad) * radius,
+                            y: Math.sin(rad) * radius
+                        });
+                    }
+                    
+                    this.state.collisionCheckPoints = points;
+                }
+
+                setupTouchControls() {
+                    const startMove = (direction) => {
+                        return () => {
+                            this.state.activeDirection = direction;
+                            this.startContinuousMove();
+                        };
+                    };
+
+                    const stopMove = () => {
+                        this.state.activeDirection = null;
+                        this.stopContinuousMove();
+                    };
+
+                    this.upArrow.addEventListener('touchstart', startMove('up'));
+                    this.downArrow.addEventListener('touchstart', startMove('down'));
+                    this.leftArrow.addEventListener('touchstart', startMove('left'));
+                    this.rightArrow.addEventListener('touchstart', startMove('right'));
+
+                    this.upArrow.addEventListener('touchend', stopMove);
+                    this.downArrow.addEventListener('touchend', stopMove);
+                    this.leftArrow.addEventListener('touchend', stopMove);
+                    this.rightArrow.addEventListener('touchend', stopMove);
+
+                    this.upArrow.addEventListener('mousedown', startMove('up'));
+                    this.downArrow.addEventListener('mousedown', startMove('down'));
+                    this.leftArrow.addEventListener('mousedown', startMove('left'));
+                    this.rightArrow.addEventListener('mousedown', startMove('right'));
+
+                    document.addEventListener('mouseup', stopMove);
+                }
+
+                startContinuousMove() {
+                    if (this.state.moveInterval || this.state.gamePaused) return;
+                    
+                    this.state.moveInterval = setInterval(() => {
+                        if (!this.state.activeDirection || this.state.gamePaused) return;
+                        
+                        const oldPosition = {...this.state.position};
+                        
+                        switch(this.state.activeDirection) {
+                            case 'up': this.state.position.y -= this.state.moveSpeed; break;
+                            case 'down': this.state.position.y += this.state.moveSpeed; break;
+                            case 'left': this.state.position.x -= this.state.moveSpeed; break;
+                            case 'right': this.state.position.x += this.state.moveSpeed; break;
+                        }
+                        
+                        const directionChanged = 
+                            (this.state.activeDirection !== this.state.lastDirection) ||
+                            (this.state.lastDirection === null);
+                        
+                        if (directionChanged) {
+                            this.addTrailPoint(oldPosition.x, oldPosition.y);
+                            this.state.lastDirection = this.state.activeDirection;
+                        }
+                        
+                        this.updateCharacterPosition();
+                        this.checkCollision();
+                    }, 50);
+                }
+
+                stopContinuousMove() {
+                    if (this.state.moveInterval) {
+                        clearInterval(this.state.moveInterval);
+                        this.state.moveInterval = null;
+                        this.state.lastDirection = null;
+                    }
+                }
+
+                addTrailPoint(x, y) {
+                    this.state.trailPoints.push({x, y});
+                    
+                    const miniMapWidth = this.miniMapContainer.clientWidth;
+                    const miniMapHeight = this.miniMapContainer.clientHeight;
+                    const scaleX = miniMapWidth / this.state.mazeSize.width;
+                    const scaleY = miniMapHeight / this.state.mazeSize.height;
+                    
+                    this.state.miniTrailPoints.push({
+                        x: x * scaleX,
+                        y: y * scaleY
+                    });
+                    
+                    this.redrawTrails();
+                }
+
+                redrawTrails() {
+                    this.trailSvg.innerHTML = '';
+                    if (this.state.trailPoints.length > 1) {
+                        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        let pathData = `M ${this.state.trailPoints[0].x} ${this.state.trailPoints[0].y}`;
+                        
+                        for (let i = 1; i < this.state.trailPoints.length; i++) {
+                            pathData += ` L ${this.state.trailPoints[i].x} ${this.state.trailPoints[i].y}`;
+                        }
+                        
+                        pathData += ` L ${this.state.position.x} ${this.state.position.y}`;
+                        
+                        path.setAttribute('d', pathData);
+                        path.setAttribute('class', 'trail-line');
+                        this.trailSvg.appendChild(path);
+                    }
+                    
+                    this.miniTrailSvg.innerHTML = '';
+                    if (this.state.miniTrailPoints.length > 1) {
+                        const miniPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        let miniPathData = `M ${this.state.miniTrailPoints[0].x} ${this.state.miniTrailPoints[0].y}`;
+                        
+                        for (let i = 1; i < this.state.miniTrailPoints.length; i++) {
+                            miniPathData += ` L ${this.state.miniTrailPoints[i].x} ${this.state.miniTrailPoints[i].y}`;
+                        }
+                        
+                        // Adicionar a posição atual do personagem ao final do traço
+                        const miniMapWidth = this.miniMapContainer.clientWidth;
+                        const miniMapHeight = this.miniMapContainer.clientHeight;
+                        const scaleX = miniMapWidth / this.state.mazeSize.width;
+                        const scaleY = miniMapHeight / this.state.mazeSize.height;
+                        
+                        miniPathData += ` L ${this.state.position.x * scaleX} ${this.state.position.y * scaleY}`;
+                        
+                        miniPath.setAttribute('d', miniPathData);
+                        miniPath.setAttribute('class', 'mini-map-trail-line');
+                        this.miniTrailSvg.appendChild(miniPath);
+                    }
+                }
+
+                checkCollisionWithWalls(x, y) {
+                    if (x < 0 || x >= this.state.mazeSize.width || 
+                        y < 0 || y >= this.state.mazeSize.height) {
+                        return false;
+                    }
+                    
+                    try {
+                        const pixel = this.state.mazeCtx.getImageData(x, y, 1, 1).data;
+                        return pixel[0] === 0 && pixel[1] === 0 && pixel[2] === 0 && pixel[3] > 0;
+                    } catch (e) {
+                        console.error("Erro ao verificar colisão:", e);
+                        return false;
+                    }
+                }
+
+                checkTrailCollision() {
+                    if (this.state.trailPoints.length < 2) return false;
+                    
+                    const start = this.state.trailPoints[this.state.trailPoints.length - 2];
+                    const end = this.state.trailPoints[this.state.trailPoints.length - 1];
+                    
+                    const dx = end.x - start.x;
+                    const dy = end.y - start.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const steps = Math.ceil(distance / this.state.trailCollisionCheckInterval);
+                    
+                    for (let j = 0; j <= steps; j++) {
+                        const t = steps === 0 ? 0 : j / steps;
+                        const checkX = Math.round(start.x + t * dx);
+                        const checkY = Math.round(start.y + t * dy);
+                        
+                        if (this.checkCollisionWithWalls(checkX, checkY)) {
+                            return true;
+                        }
+                    }
+                    
+                    return false;
+                }
+
+                checkCollision() {
+                    if (!this.state.mazeCtx || this.state.gamePaused) return;
+
+                    let charCollision = false;
+                    for (const point of this.state.collisionCheckPoints) {
+                        const checkX = Math.round(this.state.position.x + point.x);
+                        const checkY = Math.round(this.state.position.y + point.y);
+                        
+                        if (this.checkCollisionWithWalls(checkX, checkY)) {
+                            charCollision = true;
+                            break;
+                        }
+                    }
+
+                    const trailCollision = this.checkTrailCollision();
+
+                    if (charCollision || trailCollision) {
+                        if (trailCollision && this.state.trailPoints.length > 0) {
+                            this.state.trailPoints.pop();
+                            this.state.miniTrailPoints.pop();
+                            this.redrawTrails();
+                        }
+                        
+                        this.state.position = {...this.state.lastPosition};
+                        this.updateCharacterPosition();
+                        return;
+                    }
+
+                    this.state.lastPosition = {...this.state.position};
+                }
+
+                updateCharacterPosition() {
+                    if (!this.state.isInitialized || this.state.gamePaused) return;
+                    
+                    this.state.position.x = Math.max(this.state.movementBounds.minX, 
+                        Math.min(this.state.movementBounds.maxX, this.state.position.x));
+                    this.state.position.y = Math.max(this.state.movementBounds.minY, 
+                        Math.min(this.state.movementBounds.maxY, this.state.position.y));
+                    
+                    this.character.style.left = `${this.state.position.x}px`;
+                    this.character.style.top = `${this.state.position.y}px`;
+                    
+                    this.redrawTrails();
+                    this.updateMiniMap();
+                    this.centerCamera();
+                }
+
+                updateMiniMap() {
+                    if (!this.miniChar || this.state.gamePaused) return;
+                    
+                    const miniMapWidth = this.miniMapContainer.clientWidth;
+                    const miniMapHeight = this.miniMapContainer.clientHeight;
+                    
+                    const xPercent = (this.state.position.x / this.state.mazeSize.width) * miniMapWidth;
+                    const yPercent = (this.state.position.y / this.state.mazeSize.height) * miniMapHeight;
+                    
+                    this.miniChar.style.left = `${xPercent}px`;
+                    this.miniChar.style.top = `${yPercent}px`;
+                    this.miniChar.style.transform = 'translate(-50%, -50%)';
+                }
+
+                centerCamera(immediate = false) {
+                    if (!this.state.isInitialized || this.state.gamePaused) return;
+                    
+                    const containerWidth = this.gameContainer.clientWidth;
+                    const containerHeight = this.gameContainer.clientHeight;
+                    
+                    const targetX = (containerWidth / 2) - this.state.position.x;
+                    const targetY = (containerHeight / 2) - this.state.position.y;
+                    
+                    const maxX = this.state.mazeSize.width - containerWidth;
+                    const maxY = this.state.mazeSize.height - containerHeight;
+                    
+                    const limitedX = Math.min(0, Math.max(-maxX, targetX));
+                    const limitedY = Math.min(0, Math.max(-maxY, targetY));
+                    
+                    if (immediate) {
+                        this.gameWrapper.style.transition = 'none';
+                        this.gameWrapper.style.transform = `translate(${limitedX}px, ${limitedY}px)`;
+                        void this.gameWrapper.offsetWidth;
+                        this.gameWrapper.style.transition = 'transform 0.1s linear';
+                    } else {
+                        this.gameWrapper.style.transform = `translate(${limitedX}px, ${limitedY}px)`;
+                    }
+                }
+
+                handleResize() {
+                    if (this.state.isInitialized) {
+                        this.state.isMobile = window.innerWidth <= 768;
+                        this.centerCamera(true);
+                        this.recalculateMiniTrailPoints();
+                        this.redrawTrails();
+                    }
+                }
+
+                handleKeyPress(e) {
+                    if (!this.state.isInitialized || this.state.gamePaused) return;
+                    
+                    const step = this.state.moveSpeed;
+                    let moved = false;
+                    const oldPosition = {...this.state.position};
+                    let direction = null;
+                    
+                    switch(e.key.toLowerCase()) {
+                        case 'arrowup':
+                        case 'w':
+                            this.state.position.y -= step;
+                            moved = true;
+                            direction = 'up';
+                            break;
+                        case 'arrowdown':
+                        case 's':
+                            this.state.position.y += step;
+                            moved = true;
+                            direction = 'down';
+                            break;
+                        case 'arrowleft':
+                        case 'a':
+                            this.state.position.x -= step;
+                            moved = true;
+                            direction = 'left';
+                            break;
+                        case 'arrowright':
+                        case 'd':
+                            this.state.position.x += step;
+                            moved = true;
+                            direction = 'right';
+                            break;
+                        case 'r':
+                            this.resetGame();
+                            moved = true;
+                            break;
+                        case 'm':
+                            this.toggleMiniMap();
+                            break;
+                    }
+                    
+                    if (moved && direction) {
+                        e.preventDefault();
+                        
+                        const directionChanged = direction !== this.state.lastDirection;
+                        
+                        if (directionChanged || this.state.trailPoints.length === 0) {
+                            this.addTrailPoint(oldPosition.x, oldPosition.y);
+                            this.state.lastDirection = direction;
+                        }
+                        
+                        this.updateCharacterPosition();
+                        this.checkCollision();
+                    }
+                }
+
+                handleKeyRelease(e) {
+                    if (['arrowup', 'w', 'arrowdown', 's', 'arrowleft', 'a', 'arrowright', 'd'].includes(e.key.toLowerCase())) {
+                        this.state.lastDirection = null;
+                    }
+                }
+
+                resetGame() {
+                    this.state.position = {
+                        x: this.state.mazeSize.width / 2,
+                        y: this.state.mazeSize.height / 2
+                    };
+                    this.state.trailPoints = [];
+                    this.state.miniTrailPoints = [];
+                    this.state.lastDirection = null;
+                    
+                    this.addTrailPoint(this.state.position.x, this.state.position.y);
+                    this.updateCharacterPosition();
+                    this.centerCamera(true);
+                }
+
+                toggleMiniMap() {
+                    this.state.miniMapVisible = !this.state.miniMapVisible;
+                    document.querySelector('.mini-map-container').style.display = 
+                        this.state.miniMapVisible ? 'block' : 'none';
+                }
+            }
+
+            new MazeGame();
+        }
+    </script>
+</body>
+</html>

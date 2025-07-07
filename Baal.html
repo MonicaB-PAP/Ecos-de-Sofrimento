@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="icon.png" type="image/png">
+    <title>Velvet Nocturne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="baal.css">
+</head>
+<body>
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Bookmarks -->
+        <div class="bookmarks">
+          <a href="Amelia.html" class="bookmark lilac" title="Amélia"></a>
+          <a href="Baal.html" class="bookmark red" title="Baal"></a>
+          <a href="Angy.html" class="bookmark turquoise" title="Angy"></a>
+          <a href="Mago.html" class="bookmark dark-blue" title="Mago"></a>
+      </div>
+        
+        <!-- Conteúdo do livro (carta branca) -->
+        <div class="letter-container">
+            <h2 class="letter-title">Baal</h2>
+            
+            <div class="letter-content">
+                <p>Baal é um homem de origem incerta, bem falante, que expela elegância e postura. Cada gesto, cada palavra e cada olhar fazem parte de um personagem que ele criou para se adaptar e conquistar. Não se sabe exatamente de onde veio, nem o que fazia antes de aparecer na aldeia — mas isso não é por acaso. Baal apaga vestígios. Apresenta-se sempre como alguém novo, educado, culto, prestável. Ganha confiança com facilidade.</p>
+
+                <p>Mas tudo nele é fachada. Ele estuda o ambiente onde entra e identifica rapidamente quem é vulnerável, quem pode ser manipulado, e quem precisa de uma ilusão para se sentir seguro. É nesse ponto frágil que ele se instala.</p>
+
+                <p>Com todos, mantém o mesmo sorriso, o mesmo olhar calmo. Nunca se zanga. Nunca se apressa. Porque sabe que o poder dele não vem da força — mas sim do controlo.</p>
+
+                <p>Baal tem uma necessidade quase doentia de domínio emocional. Não lhe chega que confiem nele. Ele quer que dependam dele, que o vejam como indispensável, como a única âncora em terra firme. Isso é o que lhe dá prazer. A manipulação não é um meio para um fim — é o fim.</p>
+
+                <p>Embora pareça agir sozinho, há sinais de que já tenha feito isto antes. A forma como constrói narrativas sobre o seu passado, como planta pequenas sementes de dúvida ou de empatia nos outros, indica prática, método, e talvez uma longa história de destruição discreta. Ele não impõe medo de imediato — primeiro, oferece conforto. E é isso que o torna perigoso.</p>
+
+                <p>Onde será que estão as suas outras vítimas?</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Navegação entre páginas
+        document.querySelectorAll('.bookmark').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                window.location.href = href;
+            });
+        });
+
+        // Destacar item ativo na navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Destacar bookmark ativo
+            document.querySelectorAll('.bookmark').forEach(bookmark => {
+                if (bookmark.getAttribute('href') === currentPage) {
+                    bookmark.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

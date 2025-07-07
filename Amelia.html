@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Ecos de Sofrimento - Amélia</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nanum+Pen+Script&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="amelia.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="main-container">
+        <!-- Bookmarks -->
+        <div class="bookmarks">
+            <a href="Amelia.html" class="bookmark lilac" title="Amélia"></a>
+            <a href="Baal.html" class="bookmark red" title="Baal"></a>
+            <a href="Angy.html" class="bookmark turquoise" title="Angy"></a>
+            <a href="Mago.html" class="bookmark dark-blue" title="Mago"></a>
+        </div>
+        
+        <!-- Conteúdo do livro (carta branca) -->
+        <div class="letter-container">
+            <h2 class="letter-title">Amélia</h2>
+            
+            <div class="letter-content">
+                <p>Amélia é uma criança de cerca de 10 anos, nascida numa aldeia pequena e pobre, onde a sobrevivência depende do esforço de todos. Desde cedo, aprendeu que o trabalho não era uma escolha, mas uma necessidade.</p>
+
+                <p>Cresceu num ambiente onde o amor existia, mas era muitas vezes abafado pelo cansaço, pela doença da mãe e pelas ausências do pai. Isso criou nela uma maturidade precoce — e, ao mesmo tempo, um vazio. Amélia queria fazer os pais felizes. Queria ser útil, ser suficiente. E é aí que está a sua maior fragilidade: ela não sabe colocar-se em primeiro lugar. Nunca aprendeu a dizer "não", porque criou uma casca que exige força, resiliência e abdicação.</p>
+
+                <p>Mas Amélia não é apenas uma menina trabalhadora. É curiosa, sensível e exploradora. Gosta da noite — não pela sua solidão e quietude, como justifica no livro —, mas porque é nela que os sonhos ganham vida. E mesmo com tão pouca infância vivida, tem uma imaginação fértil, pura e indomável.</p>
+
+                <p>Ela carrega muita luz, mas o mundo em que vive não tem espaço para luzes que brilham sozinhas.</p>
+
+                <p>É uma menina que nunca teve tempo para ser apenas criança — e, por isso, procura instintivamente qualquer figura que lhe prometa segurança, atenção e cuidado. É isso que a torna tão humana.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Navegação entre páginas
+        document.querySelectorAll('.bookmark').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                window.location.href = href;
+            });
+        });
+
+        // Destacar item ativo na navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Destacar bookmark ativo
+            document.querySelectorAll('.bookmark').forEach(bookmark => {
+                if (bookmark.getAttribute('href') === currentPage) {
+                    bookmark.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+
+</body>
+</html>

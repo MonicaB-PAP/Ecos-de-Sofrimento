@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Ecos de Sofrimento - Jogos</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="jogos.css">
+</head>
+<body>
+    <!-- Estrelas de Fundo -->
+    <div class="stars-background">
+        <div class="star star-1">★</div>
+        <div class="star star-2">☆</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">☆</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">☆</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">☆</div>
+        <div class="star star-9">★</div>
+        <div class="star star-10">☆</div>
+        <div class="star star-11">★</div>
+        <div class="star star-12">☆</div>
+        <div class="star star-13">★</div>
+        <div class="star star-14">☆</div>
+        <div class="star star-15">★</div>
+        <div class="star star-16">☆</div>
+        <div class="star star-17">★</div>
+        <div class="star star-18">☆</div>
+        <div class="star star-19">★</div>
+        <div class="star star-20">☆</div>
+        <div class="star star-21">★</div>
+        <div class="star star-22">☆</div>
+        <div class="star star-23">★</div>
+        <div class="star star-24">☆</div>
+        <div class="star star-25">★</div>
+        <div class="star star-26">☆</div>
+        <div class="star star-27">★</div>
+        <div class="star star-28">☆</div>
+        <div class="star star-29">★</div>
+        <div class="star star-30">☆</div>
+    </div>
+
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mt-5 pt-5">
+        <div class="game-frame">
+            <div class="game-content">
+                <h1 class="game-title">Diverte-te!</h1>
+                <div class="text-center mt-4">
+                    <a href="Labirinto.html" class="game-button">Encontra a Saída!</a>
+                    <a href="Quizz.html" class="game-button">Descobre que Personagem és!</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts necessários para o Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Scripts personalizados -->
+    <script>
+        // Função para criar confetes coloridos
+        function createConfetti() {
+            const colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#9400D3", "#FF69B4"];
+            const effect = document.createElement("div");
+            effect.className = "childish-effect";
+            
+            // Adiciona 50 confetes
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement("div");
+                confetti.className = "confetti-piece";
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.setProperty("--color", colors[Math.floor(Math.random() * colors.length)]);
+                confetti.style.animationDelay = Math.random() * 0.5 + "s";
+                effect.appendChild(confetti);
+            }
+            
+            // Adiciona um "PLIM!" gigante
+            const plim = document.createElement("div");
+            plim.className = "plim-effect";
+            plim.textContent = "PLIM!";
+            plim.style.top = "40%";
+            plim.style.left = "50%";
+            plim.style.transform = "translate(-50%, -50%)";
+            effect.appendChild(plim);
+            
+            document.body.appendChild(effect);
+            
+            // Remove depois de 2 segundos
+            setTimeout(() => {
+                effect.remove();
+            }, 2000);
+        }
+
+        // Aplica a TODOS os botões de jogo
+        document.querySelectorAll(".game-button").forEach(button => {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                createConfetti();
+                setTimeout(() => {
+                    window.location.href = e.target.href;
+                }, 1000);
+            });
+        });
+
+        // Destacar item ativo na navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
