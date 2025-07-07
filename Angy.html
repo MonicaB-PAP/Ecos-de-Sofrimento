@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Ecos de Sofrimento - Ângela</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nanum+Pen+Script&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="angy.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="main-container">
+        <!-- Bookmarks -->
+        <div class="bookmarks">
+            <a href="Amelia.html" class="bookmark lilac" title="Amélia"></a>
+            <a href="Baal.html" class="bookmark red" title="Baal"></a>
+            <a href="Angy.html" class="bookmark turquoise" title="Ângela"></a>
+            <a href="Mago.html" class="bookmark dark-blue" title="Mago"></a>
+        </div>
+        
+        <!-- Conteúdo do livro (carta branca) -->
+        <div class="letter-container">
+            <h2 class="letter-title">Ângela</h2>
+            
+            <div class="letter-content">
+                <p>Ângela é uma mulher que vive há anos sob o domínio implacável de Baal. Trabalha como empregada na sua mansão, sempre impecável, sempre silenciosa, sempre presente. Mas, por trás da postura formal, do uniforme imaculado e do olhar contido, existe alguém profundamente quebrado.</p>
+
+                <p>Ela já foi uma militar renomada, com um grande amor e uma família invejável, composta por três filhos. A vida dela parecia perfeita, mas, como acontece com a perfeição, a estabilidade durou pouco. Um dia, o povo se revoltou, exigindo seus direitos básicos, e essa guerra popular resultou na morte de vários aristocratas, incluindo seu marido e dois de seus filhos. No meio daquele cenário caótico e mortal, Ângela não sabia o que fazer. Foi então que Baal apareceu, se apresentando como um salvador. Durante cinco anos, ele visitava sua casa todos os dias, ajudando-a a cuidar da única criança que sobrou. Mas, quando Baal se cansou da fachada, fez-lhe uma ameaça: se ela não o seguisse, ele mataria o seu filho. A partir desse momento, Ângela tornou-se sua governanta, forçada a viver sob sua dominação.</p>
+
+                <p>Apesar de tudo, uma parte dela sobreviveu. Uma pequena, mas resistente chama de esperança. E é essa parte que se manifesta sempre que ela olha para Amélia. Porque, ao vê-la, Ângela enxerga o filho que talvez ainda esteja bem, ou quem sabe as filhas que ela nunca pôde proteger. Mesmo sabendo que não pode mudar tudo, ela faz o que pode: protege com gestos silenciosos, alivia no que consegue, resiste em silêncio.</p>
+
+                <p>Ângela é o reflexo da resistência de Amélia.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Navegação entre páginas
+        document.querySelectorAll('.bookmark').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                window.location.href = href;
+            });
+        });
+
+        // Destacar item ativo na navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Destacar bookmark ativo
+            document.querySelectorAll('.bookmark').forEach(bookmark => {
+                if (bookmark.getAttribute('href') === currentPage) {
+                    bookmark.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,557 @@
+/* ESTRELAS NO BACKGROUND - FIXAS */
+.stars-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: spin 8s linear infinite;
+    opacity: 0.8;
+}
+
+/* Cores das estrelas - rosa, azul e branco */
+.star-1 { color: #f02b87; top: 8%; left: 5%; } /* rosa claro */
+.star-2 { color: #efa7c8; top: 12%; right: 8%; } /* azul claro */
+.star-3 { color: #f02b87; bottom: 18%; left: 7%; } /* branco */
+.star-4 { color: #f02b87; top: 22%; right: 12%; } /* rosa médio */
+.star-5 { color: #7db6bf; bottom: 14%; right: 5%; } /* azul médio */
+.star-6 { color: #f02b87; top: 32%; left: 10%; } /* rosa claro */
+.star-7 { color: #f02b87; bottom: 24%; right: 15%; } /* azul claro */
+.star-8 { color: #f02b87; top: 42%; left: 20%; } /* branco */
+.star-9 { color: #f368e0; bottom: 28%; right: 25%; } /* rosa médio */
+.star-10 { color: #f02b87; top: 52%; left: 15%; } /* azul médio */
+.star-11 { color: #ff9ff3; bottom: 34%; right: 30%; } /* rosa claro */
+.star-12 { color: #f02b87; top: 62%; left: 25%; } /* azul claro */
+.star-13 { color: #f02b87; bottom: 38%; right: 10%; } /* branco */
+.star-14 { color: #b1abd1; top: 72%; left: 30%; } /* rosa médio */
+.star-15 { color: #f02b87; bottom: 42%; right: 20%; } /* azul médio */
+.star-16 { color: #dee59b; top: 82%; left: 15%; } /* rosa claro */
+.star-17 { color: #f02b87; top: 20%; left: 30%; } /* azul claro */
+.star-18 { color: #f02b87; top: 40%; right: 22%; } /* branco */
+.star-19 { color: #f02b87; bottom: 60%; left: 25%; } /* rosa médio */
+.star-20 { color: #f02b87; top: 65%; right: 18%; } /* azul médio */
+.star-21 { color: #f02b87; bottom: 30%; left: 40%; } /* rosa claro */
+.star-22 { color: #f02b87; top: 50%; left: 35%; } /* azul claro */
+.star-23 { color: #f02b87; bottom: 45%; right: 35%; } /* branco */
+.star-24 { color: #f02b87; top: 75%; left: 45%; } /* rosa médio */
+.star-25 { color: #f02b87; bottom: 25%; left: 15%; } /* azul médio */
+.star-26 { color: #f02b87; top: 35%; right: 40%; } /* rosa claro */
+.star-27 { color: #f02b87; bottom: 55%; left: 50%; } /* azul claro */
+.star-28 { color: #f02b87; top: 85%; right: 30%; } /* branco */
+.star-29 { color: #f02b87; bottom: 15%; left: 30%; } /* rosa médio */
+.star-30 { color: #f02b87; top: 25%; right: 45%; } /* azul médio */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* NAVBAR ESTILIZADA */
+/* NAVBAR ESTILIZADA */
+.navbar {
+    background-color: rgba(15, 10, 10, 0.9) !important;
+    z-index: 1050;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #885e44;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-family: 'Marcellus SC', serif;
+    font-size: 1.8rem;
+    color: #c49661 !important;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(196, 150, 97, 0.5);
+}
+
+.nav-link {
+    font-family: 'Marcellus SC', serif;
+    font-size: 1.2rem;
+    color: #c49661 !important;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0.5rem 1.2rem !important;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+.nav-link:hover {
+    color: #f8d7a3 !important;
+    text-shadow: 0 0 8px rgba(248, 215, 163, 0.6);
+}
+
+.nav-link.active {
+    color: #f5d7a1 !important;
+    font-weight: bold;
+    border-bottom: 2px solid #f5d7a1;
+}
+
+.navbar-toggler {
+    border-color: rgba(196, 150, 97, 0.5);
+    padding: 0.3rem 0.6rem;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(196, 150, 97, 0.3);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(196, 150, 97, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.3em;
+    height: 1.3em;
+}
+
+/* MENU MOBILE */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(15, 10, 10, 0.97);
+        backdrop-filter: blur(12px);
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: 1px solid #885e44;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    .nav-item {
+        margin: 8px 0;
+    }
+    
+    .nav-link {
+        padding: 10px 20px !important;
+        border-bottom: 1px solid rgba(136, 94, 68, 0.4);
+        margin: 0;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(136, 94, 68, 0.15);
+        border-radius: 5px;
+    }
+}
+
+
+/* MENU MOBILE */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(15, 10, 10, 0.97);
+        backdrop-filter: blur(12px);
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: 1px solid #885e44;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    .nav-item {
+        margin: 8px 0;
+    }
+    
+    .nav-link {
+        padding: 10px 20px !important;
+        border-bottom: 1px solid rgba(136, 94, 68, 0.4);
+        margin: 0;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(136, 94, 68, 0.15);
+        border-radius: 5px;
+    }
+}
+
+/* ESTILOS DO QUIZ */
+.quiz-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+.quiz-container {
+    background-color: rgba(243, 229, 209, 0.95);
+    padding: 35px;
+    max-width: 650px;
+    width: 90%;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 0 0 6px #ffffff,
+        0 0 0 9px #FF6B6B,
+        0 0 0 12px #ffffff,
+        0 0 0 15px #74B9FF;
+    position: relative;
+    margin: 20px auto;
+    color: #413829;
+    font-family: 'Cormorant Garamond', serif;
+    border: 3px dashed #3b210e;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.quiz-container h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5rem;
+    margin: 0 0 25px 0;
+    color: #5a3e1f;
+    position: relative;
+    display: inline-block;
+}
+
+.quiz-container h1::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,7 Q10,2 20,7 Q30,0 40,7 Q50,10 60,7 Q70,12 80,7 Q90,4 100,7" fill="none" stroke="%23FF6B6B" stroke-width="2" stroke-linecap="round"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 100px 10px;
+}
+
+.quiz-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #3b3728;
+    font-family: 'Cormorant', serif;
+    line-height: 1.4;
+}
+
+.quiz-container button {
+    background: #FFEAA7;
+    border: 3px solid #6D4C41;
+    color: #6D4C41;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.8rem;
+    padding: 12px 30px;
+    margin: 15px auto;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    cursor: pointer;
+    display: block;
+    width: 90%;
+    max-width: 350px;
+    position: relative;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.quiz-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+    background: #FFEAA7;
+}
+
+.quiz-container button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.options-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.option {
+    flex: 1;
+    min-width: 120px;
+    max-width: 250px;
+    font-size: 1.1rem !important;
+    background: #FFEAA7 !important;
+}
+/* BOTÃO VOLTAR AOS JOGOS */
+.back-to-games {
+    display: inline-block;
+    background: linear-gradient(to bottom, #f5a623, #d94f2b); /* Gradiente azul */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-family: 'Fredoka One', cursive;
+    text-decoration: none;
+    margin: 20px auto;
+    box-shadow: 0 4px 0 #1c1715;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 250px;
+    width: 100%;
+}
+
+.back-to-games:hover {
+    transform: translateY(-3px);
+    box-shadow: #8c2c1a;
+}
+
+.back-to-games:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #230f04;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .back-to-games {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+        max-width: 220px;
+    }
+}
+#result {
+    margin-top: 30px;
+    padding: 30px;
+    background: #f2eddd;
+    border-radius: 15px;
+    display: none;
+    position: relative;
+    animation: appear 0.5s ease-out forwards;
+    text-align: center;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.character-icon {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #2e211a;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    background: white;
+}
+
+.character-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.character-info {
+    text-align: center;
+}
+
+#result h2 {
+    font-family: 'Marcellus SC', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #6D4C41;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#result p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #333;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.quiz-progress {
+    width: 100%;
+    height: 10px;
+    background-color: #e0c9b1;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    background: rgb(238, 83, 83);
+    border-radius: 5px;
+    transition: width 0.4s ease;
+   
+    background-size: 1rem 1rem;
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+/* ESTILOS GERAIS */
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    padding-top: 70px;
+    background-color: #1a0e06;
+    background-image: 
+        url('texture-paper.png'),
+        radial-gradient(ellipse at 20% 20%, #4022114e 0%, transparent 40%),
+        linear-gradient(to bottom, #0e0603ca, #0e1410f2),
+        linear-gradient(to bottom, rgba(0,0,0,0.2) 1px, transparent 100px);
+    background-attachment: fixed;
+    color: #f8f4e6;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #0f0a0a;
+    color: #c49661;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+    border-top: 1px solid #885e44;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* PERSONALIZAÇÃO POR PERSONAGEM */
+.result-amelia {
+    background: linear-gradient(135deg, #f8d5f2 0%, #ffffff 100%);
+    border: 4px solid #f666a2;
+}
+
+.result-baal {
+    background: linear-gradient(135deg, #f8d5d5 0%, #ffffff 100%);
+    border: 4px solid #ff6b6b;
+}
+
+.result-angela {
+    background: linear-gradient(135deg, #d5e3f8 0%, #ffffff 100%);
+    border: 4px solid #54a0ff;
+}
+
+.result-feiticeiro {
+    background: linear-gradient(135deg, #e0f8d5 0%, #ffffff 100%);
+    border: 4px solid #48dbfb;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    /* Reduzir número de estrelas em mobile */
+    .star-17, .star-18, .star-19, .star-20, 
+    .star-21, .star-22, .star-23, .star-24,
+    .star-25, .star-26, .star-27, .star-28,
+    .star-29, .star-30 {
+        display: none;
+    }
+    
+    .quiz-main-container {
+        padding: 20px 10px;
+    }
+    
+    .quiz-container {
+        padding: 25px 15px;
+        box-shadow:
+            0 5px 15px rgba(0, 0, 0, 0.2),
+            0 0 0 4px #ffffff,
+            0 0 0 6px #FF6B6B,
+            0 0 0 8px #ffffff,
+            0 0 0 10px #74B9FF;
+    }
+    
+    .quiz-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .quiz-container h2 {
+        font-size: 1.4rem;
+    }
+    
+    .quiz-container button {
+        font-size: 1.4rem;
+        padding: 10px 20px;
+    }
+    
+    .character-icon {
+        width: 130px;
+        height: 130px;
+    }
+    
+    #result h2 {
+        font-size: 2rem;
+    }
+    
+    #result p {
+        font-size: 1.1rem;
+    }
+    
+    .options-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .option {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-main-container {
+        padding: 15px 5px;
+    }
+    
+    .quiz-container {
+        padding: 20px 12px;
+    }
+    
+    .quiz-container h1 {
+        font-size: 2.2rem;
+    }
+    
+    .character-icon {
+        width: 110px;
+        height: 110px;
+    }
+    
+    #result {
+        padding: 20px;
+    }
+}
