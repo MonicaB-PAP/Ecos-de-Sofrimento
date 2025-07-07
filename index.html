@@ -35,14 +35,25 @@
 
 
     <!-- Banner Section -->
-    <div class="d-flex justify-content-center">
-        <header class="banner">
+<div class="d-flex justify-content-center">
+    <div class="video-banner">
+        <div class="video-container">
+            <video autoplay muted loop class="active">
+                <source src="video-og.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop>
+                <source src="PAP-2temp.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="banner-overlay">
             <h1>Ecos de Sofrimento</h1>
-            <p>Um sussurro passado.
-                Um ciclo presente.
-                Um presságio futuro</p>
-        </header>
+            <p>Um sussurro passado. Um ciclo presente. Um presságio futuro</p>
+        </div>
     </div>
+</div>
 
     <!-- Efeitos de pétalas -->
     <div class="flower-petal" style="width:8px; height:8px; top:15%; left:10%;"></div>
@@ -247,6 +258,22 @@
         });
     });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.video-container video');
+    let currentVideo = 0;
+    
+    // Mostrar o primeiro vídeo
+    videos[currentVideo].classList.add('active');
+    
+    // Configurar o intervalo para trocar os vídeos
+    setInterval(() => {
+        videos[currentVideo].classList.remove('active');
+        currentVideo = (currentVideo + 1) % videos.length;
+        videos[currentVideo].classList.add('active');
+    }, 8000); // Muda a cada 8 segundos - ajuste conforme necessário
+});
+</script>
     
 </body>
 </html>
