@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Ecos de Sofrimento - Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nanum+Pen+Script&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="quizz.css">
+</head>
+<body>
+    <!-- Container para as estrelas do background -->
+    <div class="stars-background">
+        <div class="star star-1">★</div>
+        <div class="star star-2">☆</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">☆</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">☆</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">☆</div>
+        <div class="star star-9">★</div>
+        <div class="star star-10">☆</div>
+        <div class="star star-11">★</div>
+        <div class="star star-12">☆</div>
+        <div class="star star-13">★</div>
+        <div class="star star-14">☆</div>
+        <div class="star star-15">★</div>
+        <div class="star star-16">☆</div>
+        <div class="star star-17">★</div>
+        <div class="star star-18">☆</div>
+        <div class="star star-19">★</div>
+        <div class="star star-20">☆</div>
+        <div class="star star-21">★</div>
+        <div class="star star-22">☆</div>
+        <div class="star star-23">★</div>
+        <div class="star star-24">☆</div>
+        <div class="star star-25">★</div>
+        <div class="star star-26">☆</div>
+        <div class="star star-27">★</div>
+        <div class="star star-28">☆</div>
+        <div class="star star-29">★</div>
+        <div class="star star-30">☆</div>
+    </div>
+
+     <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção do Quiz -->
+    <div class="quiz-main-container">
+        <div class="quiz-container">
+            <div class="drawing star"></div>
+            <div class="drawing heart"></div>
+            
+            <h1>Que personagem és tu?</h1>
+            <div id="quiz">
+                <button onclick="startQuiz()">Começar Quiz</button>
+            </div>
+            <div id="result"></div>
+        </div>
+    </div>
+    <div class="text-center">
+    <a href="jogos.html" class="back-to-games">Voltar aos Jogos</a>
+</div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts necessários para o Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script do Quiz -->
+    <script>
+        const questions = [
+            {
+                question: "Quando enfrentas a perda, como reages?",
+                options: [
+                    { text: "Sofro em silêncio, mas mantenho a esperança viva.", character: "Amélia" },
+                    { text: "Transformo a dor em poder e avanço sem olhar para trás.", character: "Baal" },
+                    { text: "Aceito que tudo faz parte de um plano maior.", character: "Feiticeiro" },
+                    { text: "Carrego o sofrimento dos outros junto ao meu próprio.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "O que significa 'força' para ti?",
+                options: [
+                    { text: "Continuar a amar, mesmo no meio da destruição.", character: "Amélia" },
+                    { text: "Impor a minha vontade sobre o mundo.", character: "Baal" },
+                    { text: "Conhecer os segredos que os outros ignoram.", character: "Feiticeiro" },
+                    { text: "Proteger os frágeis, mesmo que me quebre no processo.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Numa noite sem estrelas, o que procurarias?",
+                options: [
+                    { text: "Um raio de esperança esquecido no escuro.", character: "Amélia" },
+                    { text: "Oportunidade para moldar o mundo a meu favor.", character: "Baal" },
+                    { text: "Um sentido oculto por detrás da ausência de luz.", character: "Feiticeiro" },
+                    { text: "Um abrigo seguro para mim e para os que amo.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Se te fosse dada a escolha entre justiça e misericórdia, o que escolherias?",
+                options: [
+                    { text: "Misericórdia. Sempre.", character: "Amélia" },
+                    { text: "Justiça. Mesmo que brutal.", character: "Baal" },
+                    { text: "A verdade, acima dos dois.", character: "Feiticeiro" },
+                    { text: "O alívio para quem sofre, mesmo que injusto.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Qual é o teu maior medo?",
+                options: [
+                    { text: "Perder a inocência e tornar-me amarga.", character: "Amélia" },
+                    { text: "Ser fraco perante o mundo.", character: "Baal" },
+                    { text: "Ser mal interpretado e esquecido.", character: "Feiticeiro" },
+                    { text: "Não conseguir salvar quem amo.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Quando te traem, o que nasce dentro de ti?",
+                options: [
+                    { text: "Uma tristeza silenciosa.", character: "Amélia" },
+                    { text: "Um desejo de vingança fria.", character: "Baal" },
+                    { text: "Uma aceitação amarga.", character: "Feiticeiro" },
+                    { text: "Um medo profundo de confiar novamente.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Se fosses comparado a um elemento da natureza, serias:",
+                options: [
+                    { text: "A névoa suave que se ergue depois da tempestade.", character: "Amélia" },
+                    { text: "A lâmina do vento que corta sem piedade.", character: "Baal" },
+                    { text: "A raiz escondida sob a terra.", character: "Feiticeiro" },
+                    { text: "A rocha que suporta o peso do mundo.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Qual destas frases ecoa mais fundo no teu coração?",
+                options: [
+                    { text: "Mesmo ferido, continuo a acreditar na luz.", character: "Amélia" },
+                    { text: "O mundo é dos que têm coragem para tomá-lo.", character: "Baal" },
+                    { text: "Não existe acaso — apenas caminhos ocultos.", character: "Feiticeiro" },
+                    { text: "Não nasci para grandes feitos, mas para proteger pequenos milagres.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Como vês o amor?",
+                options: [
+                    { text: "Um sentimento puro que resiste ao tempo.", character: "Amélia" },
+                    { text: "Uma fraqueza perigosa.", character: "Baal" },
+                    { text: "Uma energia ancestral.", character: "Feiticeiro" },
+                    { text: "Um dever silencioso.", character: "Ângela" }
+                ]
+            },
+            {
+                question: "Diante da adversidade, o que te mantém de pé?",
+                options: [
+                    { text: "A memória daqueles que amo.", character: "Amélia" },
+                    { text: "O desejo de não ser derrotado.", character: "Baal" },
+                    { text: "A certeza de um propósito oculto.", character: "Feiticeiro" },
+                    { text: "A responsabilidade de proteger os que confiam em mim.", character: "Ângela" }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let scores = { "Amélia": 0, "Baal": 0, "Ângela": 0, "Feiticeiro": 0 };
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function startQuiz() {
+            currentQuestion = 0;
+            scores = { "Amélia": 0, "Baal": 0, "Ângela": 0, "Feiticeiro": 0 };
+            document.getElementById('result').style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const quizDiv = document.getElementById('quiz');
+            const q = questions[currentQuestion];
+            
+            // Calcula o progresso
+            const progressPercent = (currentQuestion / questions.length) * 100;
+            
+            let html = `
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" style="width: ${progressPercent}%"></div>
+                </div>
+                <h2 style="font-family: 'Nanum Pen Script', cursive; font-size: 1.2rem;">${q.question}</h2>
+            `;
+            
+            // Embaralha as opções
+            const shuffledOptions = shuffleArray([...q.options]);
+            const topOptions = shuffledOptions.slice(0, 2);
+            const bottomOptions = shuffledOptions.slice(2, 4);
+            
+            html += `<div class="options-row">`;
+            
+            // Adiciona as duas primeiras opções
+            topOptions.forEach(option => {
+                html += `<button class="option" onclick="selectOption('${option.character}')">${option.text}</button>`;
+            });
+            
+            html += `</div><div class="options-row">`;
+            
+            // Adiciona as duas últimas opções
+            bottomOptions.forEach(option => {
+                html += `<button class="option" onclick="selectOption('${option.character}')">${option.text}</button>`;
+            });
+            
+            html += `</div>`;
+            
+            quizDiv.innerHTML = html;
+        }
+
+        function selectOption(character) {
+            scores[character]++;
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+            const descriptions = {
+                "Amélia": "És como a Amélia - cheia de imaginação e sonhos! O teu coração é puro e vês magia em tudo. Mas cuidado para não confiares demais em quem não merece!",
+                "Baal": "És como o Baal - forte e organizado! Gostas que tudo tenha a sua ordem e lugar. Mas lembra-te que às vezes é bom deixar as coisas um pouco desarrumadas!",
+                "Ângela": "És como a Ângela - amiga de todos! Sempre pronta para ajudar e proteger. Mas não te esqueças de cuidar de ti também, está bem?",
+                "Feiticeiro": "És como o Feiticeiro - inteligente e misterioso! Adoras aprender coisas novas e descobrir segredos. Mas não fiques só nos livros, vai brincar também!"
+            };
+
+            const characterImages = {
+                "Amélia": "icon-amelia.png",
+                "Baal": "icon-baal.png",
+                "Ângela": "icon-angy.png",
+                "Feiticeiro": "icon-feiticeiro.png"
+            };
+
+            const characterClasses = {
+                "Amélia": "amelia",
+                "Baal": "baal",
+                "Ângela": "angela",
+                "Feiticeiro": "feiticeiro"
+            };
+
+            document.getElementById('quiz').innerHTML = '';
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = `result-${characterClasses[winner]}`;
+            resultDiv.innerHTML = `
+                <div class="result-content">
+                    <div class="character-icon">
+                        <img src="${characterImages[winner]}" alt="${winner}">
+                    </div>
+                    <div class="character-info">
+                        <h2>${winner}!</h2>
+                        <p style="font-family: 'Nanum Pen Script', cursive; font-size: 1rem;">${descriptions[winner]}</p>
+                        <button onclick="startQuiz()">Jogar Novamente</button>
+                    </div>
+                </div>
+            `;
+            resultDiv.style.display = 'block';
+        }
+
+        // Destacar item ativo na navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
