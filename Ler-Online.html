@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="icon.png" type="image/png">
+    <title>Ler Online</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Ler-Online.css"> <!-- CSS externo -->
+</head>
+<body>
+    <!-- Modo Escuro Toggle -->
+    <label class="toggle">
+        <input type="checkbox" onchange="toggleDarkMode(this)">
+        <span class="slider">
+            <span class="toggle-label">☾</span>
+            <span class="toggle-label">☼</span>
+        </span>
+    </label>
+
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="item">
+            <iframe class="flipbook-iframe" src="https://heyzine.com/flip-book/d4a77cbcb0.html" frameborder="0"></iframe>
+            <div class="button-container">
+                <button class="unique-button" onclick="toggleContent('flipbook', this)">Esconder</button>
+                <button class="unique-button" onclick="openFullscreen('flipbook', this)">Expandir</button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <!-- Atualizar o src para usar o PDF.js -->
+            <iframe class="pdf-iframe" src="livro-online.pdf" frameborder="0" width="100%" height="600px"></iframe>
+            <div class="button-container">
+                <button class="unique-button" onclick="toggleContent('pdf', this)">Esconder</button>
+                <button class="unique-button" onclick="openFullscreen('pdf', this)">Expandir</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Funções de controle para os botões
+        function toggleContent(type, button) {
+            const iframe = document.querySelector(`.${type}-iframe`);
+            const expandButton = button.nextElementSibling;
+
+            if (iframe.style.display === "none") {
+                iframe.style.display = "block";
+                button.innerText = "Esconder";
+                expandButton.disabled = false;
+            } else {
+                iframe.style.display = "none";
+                button.innerText = "Mostrar";
+                expandButton.disabled = true;
+            }
+        }
+
+        function openFullscreen(type, button) {
+            const iframe = document.querySelector(`.${type}-iframe`);
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        function toggleDarkMode(checkbox) {
+            document.body.classList.toggle('dark-mode', checkbox.checked);
+            const flipbookIframe = document.querySelector('.flipbook-iframe');
+            const pdfIframe = document.querySelector('.pdf-iframe');
+
+            if (checkbox.checked) {
+                flipbookIframe.src = "https://heyzine.com/flip-book/27be5484c2.html";
+                pdfIframe.src = "livro-dark.pdf";
+            } else {
+                flipbookIframe.src = "https://heyzine.com/flip-book/c9789fdff1.html";
+                pdfIframe.src = "livro-online.pdf";
+            }
+        }
+    </script>
+</body>
+</html>
