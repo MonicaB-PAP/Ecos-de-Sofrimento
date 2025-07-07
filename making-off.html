@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos de Sofrimento - Making Of</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus+SC&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="making-off.css">
+</head>
+<body>
+    <!-- Lightbox container -->
+    <div id="lightbox" class="lightbox">
+       <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <div class="lightbox-nav">
+                <button onclick="navigateLightbox(-1)">❮</button>
+                <button onclick="navigateLightbox(1)">❯</button>
+            </div>
+            <img id="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+        <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="making-off.html">Bastidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Side Menu -->
+    <div class="side-menu">
+        <div class="menu-items">
+            <a href="#origem" class="menu-item"><i class="fas fa-book-open"></i> Introdução</a>
+            <a href="#capa" class="menu-item"><i class="fas fa-book"></i> Capa do Livro</a>
+            <a href="#objetivos" class="menu-item"><i class="fas fa-bullseye"></i> Objetivos</a>
+            <a href="#processo" class="menu-item"><i class="fas fa-pencil-alt"></i> Processo Criativo</a>
+            <a href="#publico" class="menu-item"><i class="fas fa-users"></i> Público-Alvo</a>
+            <a href="#personagens" class="menu-item"><i class="fas fa-user"></i> Personagens</a>
+            <a href="#simbolos" class="menu-item"><i class="fas fa-magic"></i> Símbolos</a>
+            <a href="#ferramentas" class="menu-item"><i class="fas fa-tools"></i> Ferramentas</a>
+            <a href="#swot" class="menu-item"><i class="fas fa-chart-line"></i> Análise SWOT</a>
+            <a href="#conclusao" class="menu-item"><i class="fas fa-book"></i> Conclusão</a>
+        </div>
+    </div>
+    <div class="menu-toggle" id="menuToggle"></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="ancient-letter">
+            <div class="letter-content">
+                <!-- Introdução -->
+                <section class="letter" id="origem">
+                    <div class="letter-header">
+                        <h1 class="section-title">Introdução</h1>
+                    </div>
+                    <div class="letter-body">
+                        "Ecos de Sofrimento" nasceu no meio de um desespero, onde não sabia o que queria fazer como Projeto de Aptidão Profissional. Eu só sabia de uma coisa: Eu queria entregar um pedaço de mim, não algo genérico sem personalidade. Então concebi esta história, cuidadosamente produzida para criar uma experiência imersiva. Mais que um projeto escolar, transformou-se num manifesto criativo que funde técnicas multimédia com narrativa criativa e 100% original.</p>
+
+                        <div class="process-content">
+                            <div class="process-media-container">
+                                <div class="process-media">
+                                    <img src="gmail_images20250613_235915.png" alt="Storyboards iniciais da história" class="clickable-image" onclick="openLightbox('gmail_images20250613_235915.png', 'Primeiros storyboards da história')">
+                                    <p class="caption">Primeiros storyboards da história</p>
+                                </div>
+                                <div class="process-media">
+                                    <img src="lia1.png" alt="Primeiras ilustrações da Amélia" class="clickable-image" onclick="openLightbox('lia1.png', 'Primeiras ilustrações da personagem Amélia')">
+                                    <p class="caption">Primeiras ilustrações da personagem Amélia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>O que começou como uma simples animação 2D transformou-se em um universo de oportunidades inexploradas, que acabaram por abordar temas como: trauma, manipulação e a herança do sofrimento.</p>
+
+                        <div class="process-content">
+                            <div class="process-media-container">
+                                <div class="process-media">
+                                    <img src="donut.png" alt="Tentativas de ilustrações 3D" class="clickable-image" onclick="openLightbox('donut.png', 'Tentativas de ilustrações 3D para complementar o projeto')">
+                                    <p class="caption">Tentativas de ilustrações 3D para complementar o projeto</p>
+                                </div>
+                                <div class="process-media">
+                                    <img src="notes.png" alt="Ilustrações do livro" class="clickable-image" onclick="openLightbox('notes.png', 'Ilustrações usadas no livro')">
+                                    <p class="caption">Ilustrações usadas no livro</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Objetivos -->
+                <section class="objectives" id="objetivos">
+                    <h1 class="section-title"><i class="fas fa-bullseye"></i> Objetivos</h1>
+                    
+                    <div class="objectives-grid">
+                        <div class="objective-card">
+                            <h2 class="subtitle">Objetivo Geral</h2>
+                            <ul>
+                                <li>Demonstrar as competências adquiridas ao longo do curso Técnico de Multimédia.</li>
+                                <li>Explorar uma narrativa complexa, imersiva e que impacte o público.</li>
+                                <li>Contribuir para a reflexão sobre temas sociais.</li>
+                                <li>Desenvolver um website complementar que amplifique a experiência da narrativa.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Processo Criativo -->
+                <section class="processo" id="processo">
+                    <h1 class="section-title"><i class="fas fa-pencil-alt"></i> Processo Criativo</h1>
+                   
+                    <div class="process-step">
+                        <h2 class="subtitle">A Génese da Ideia</h2>
+                        <div class="process-content">
+                            <div class="process-text">
+                                <p>No verão de 2023, durante uma viagem de carro, a música "Enemies" do Imagine Dragons inspirou a cena inicial: uma luta entre um herói e uma vilã, com a vilã como protagonista.</p>
+                                <p>As primeiras ideias foram registradas no aplicativo FlipaClip, criando uma animação básica da cena.</p>
+                            </div>
+                            <div class="animation-stack">
+                                <div class="process-media">
+                                    <video controls aria-label="Vídeo do storyboard inicial">
+                                        <source src="video-og.mp4" type="video/mp4">
+                                    </video>
+                                    <p class="caption">Primeira animação conceitual (FlipaClip)</p>
+                                </div>
+                                <div class="process-media">
+                                    <video controls aria-label="Vídeo do storyboard inicial">
+                                        <source src="video2.mp4" type="video/mp4">
+                                    </video>
+                                    <p class="caption">Rascunho final da ideia (Flipa Clip)</p>
+                                </div>
+                                <div class="process-media">
+                                    <video controls aria-label="Vídeo do storyboard inicial">
+                                        <source src="PAP-2temp.mp4" type="video/mp4">
+                                    </video>
+                                    <p class="caption">Versão temporária da animação</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <h2 class="subtitle">Desenvolvimento da Narrativa</h2>
+                        <div class="process-content">
+                            <div class="process-text">
+                                <p>Para a construção da história, decidi por optar por exercícios de justificação lógica:</p>
+                                <p>Por que é que estavam a lutar?</p>
+                                <p>- Porque a Vilã queria queimar a aldeia.</p>
+                                <p>Por quê?</p>
+                                <p>- Porque ela queria honrar a morte da sua filha, Amélia, que fora considerada "impura"</p>
+                                <p>(...)</p>
+                                <p>A história evoluiu e começou a explorar temas mais profundos:</p>
+                                <ul>
+                                    <li>A vulnerabilidade da Amélia frente às ações de Baal</li>
+                                    <li>A ascensão vilanesca da Bonnie</li>
+                                    <li>A natureza do mal e sua influência</li>
+                                    <li>O ciclo de trauma e vingança</li>
+                                    <li>A manipulação psicológica</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <h2 class="subtitle">Mudança de Formato</h2>
+                        <div class="process-content">
+                            <div class="process-text">
+                                <p>Originalmente, a história foi concebida como banda desenhada, mas o projeto enfrentou desafios na produção das ilustrações. Como sou muito detalhista nos desenhos, o ritmo de production ficou aquém do esperado.</p>
+                                <p>Decidi então transicionar para um formato escrito, inspirando-me no estilo gótico após pesquisar obras como:</p>
+                                <ul>
+                                    <li><em>O Retrato de Dorian Gray</em> de Oscar Wilde</li>
+                                    <li><em>O Fantasma da Ópera</em> de Gaston Leroux</li>
+                                    <li><em>A Metamorfose</em> de Franz Kafka</li>
+                                    <li>Obras de Shakespeare</li>
+                                    <li>Luís de Camões</li>
+                                    <li>The Garden of Time de J.G Ballard</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comic-carousel">
+    <div class="comic-slides">
+        <div class="comic-slide">
+            <img src="pg1.png" alt="Página 1 da banda desenhada" class="clickable-image" onclick="openLightbox('pg1.png', 'Primeiras páginas do protótipo de banda desenhada', 0)">
+        </div>
+        <div class="comic-slide">
+            <img src="pg2.png" alt="Página 2 da banda desenhada" class="clickable-image" onclick="openLightbox('pg2.png', 'Página 2 do protótipo de banda desenhada', 1)">
+        </div>
+        <div class="comic-slide">
+            <img src="pg3.png" alt="Página 3 da banda desenhada" class="clickable-image" onclick="openLightbox('pg3.png', 'Página 3 do protótipo de banda desenhada', 2)">
+        </div>
+        <div class="comic-slide">
+            <img src="pg4.png" alt="Página 4 da banda desenhada" class="clickable-image" onclick="openLightbox('pg4.png', 'Página 4 do protótipo de banda desenhada', 3)">
+        </div>
+        <div class="comic-slide">
+            <img src="pg5.png" alt="Página 5 da banda desenhada" class="clickable-image" onclick="openLightbox('pg5.png', 'Página 5 do protótipo de banda desenhada', 4)">
+        </div>
+    </div>
+    
+    <div class="carousel-indicators" id="carouselIndicators">
+        <!-- Os indicadores serão adicionados via JavaScript -->
+    </div>
+    
+    <div class="carousel-nav">
+        <button onclick="scrollCarousel(-1)"><i class="fas fa-chevron-left"></i> Anterior</button>
+        <button onclick="scrollCarousel(1)">Próximo <i class="fas fa-chevron-right"></i></button>
+    </div>
+    
+</div>
+                        </div>
+                        <p class="caption">Primeiras páginas do protótipo de banda desenhada (Clip Studio Paint)</p>
+                    </div>
+                    
+                </section>
+
+                <!-- Capa do Livro -->
+                <section class="capa-livro" id="capa">
+                    <h1 class="section-title"><i class="fas fa-book"></i> Capa do Livro</h1>
+                    
+                    <div class="process-content">
+                        <div class="process-text">
+                            <h2 class="subtitle">Análise da Capa</h2>
+                            <p>A capa transmite luxuosidade através da textura adornada, que representa riqueza e poder. No entanto, a textura na parte de trás está gasta e apodrecida, sugerindo que os adornos tentam esconder a podridão por detrás da fachada.</p>
+                            <p>No centro, temos uma árvore com tons mórbidos. Inicialmente concebida com uma aparência queimada, funciona como um presságio do destino de Amélia. A árvore simboliza tanto Amélia (que sofreu o mesmo destino de ser queimada) como Bonnie (cujas raízes do sofrimento se enraizaram nela).</p>
+                            <p>Os símbolos pendurados na árvore representam os holofotes vermelhos descritos no início do livro, que simbolizam Baal. Como ele, os objetos estão pendurados na árvore, observando intensamente a quarta parede, como se quisessem transmitir uma mensagem ao leitor.</p>
+                            <p>A lua tenta iluminar a árvore, com alguns raios passando pelas nuvens densas (cumulonimbus, que pressagiam uma tempestade), mas a maioria está bloqueada. A capa oferece um foreshadowing e pistas do que acontecerá no livro, de forma simbólica para não estragar a imersão do leitor.</p>
+                            <p>A contracapa tem uma mensagem vaga, com tom vazio e melancólico, como se a pessoa que disse essas palavras estivesse a assimilar algum trauma. O texto é vago para instigar a curiosidade do leitor.</p>
+                        </div>
+                        
+                        <div class="process-media-container">
+                            <div class="process-media">
+                                <img src="Capa.png" alt="Capa final do livro" class="clickable-image" onclick="openLightbox('Capa.png', 'Capa final do livro')">
+                                <p class="caption">Capa final do livro</p>
+                            </div>
+                            <div class="process-media">
+                                <img src="ContraCapa.png" alt="Contracapa final do livro" class="clickable-image" onclick="openLightbox('ContraCapa.png', 'Contracapa final do livro')">
+                                <p class="caption">Contracapa final do livro</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="subtitle">Evolução da Capa</h2>
+                    <div class="process-media-container">
+                        <div class="process-media">
+                            <img src="Capa-Livro.pap3.png" alt="Versão anterior da capa" class="clickable-image" onclick="openLightbox('Capa-Livro.pap3.png', 'Versão anterior da capa')">
+                            <p class="caption">Versão anterior da capa</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="Capa-Livro.pap22.png" alt="Tentativa de contracapa" class="clickable-image" onclick="openLightbox('Capa-Livro.pap22.png', 'Tentativa inicial de contracapa')">
+                            <p class="caption">Tentativa inicial de contracapa</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="inspo-cc.png" alt="Inspiração para a contracapa" class="clickable-image" onclick="openLightbox('inspo-cc.png', 'Inspiração para a contracapa')">
+                            <p class="caption">Inspiração para a contracapa</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="PhotoMoldy0012_2_350-photoroom.png" alt="Textura de fundo" class="clickable-image" onclick="openLightbox('PhotoMoldy0012_2_350-photoroom.png', 'Textura de fundo')">
+                            <p class="caption">Textura de fundo</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="fundo.png" alt="Fundo da capa" class="clickable-image" onclick="openLightbox('fundo.png', 'Fundo da capa e contracapa')">
+                            <p class="caption">Fundo da capa e contracapa</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="round_frameA2.png" alt="Adornos da capa" class="clickable-image" onclick="openLightbox('round_frameA2.png', 'Inspiração para os adornos da capa')">
+                            <p class="caption">Inspiração para os adornos da capa</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="avori-2.png" alt="Tentativa de capa" class="clickable-image" onclick="openLightbox('avori-2.png', 'Tentativa inicial de capa')">
+                            <p class="caption">Tentativa inicial de capa</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="avori-3.png" alt="Tentativa de capa" class="clickable-image" onclick="openLightbox('avori-3.png', 'Outra tentativa de capa')">
+                            <p class="caption">Outra tentativa de capa</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Público-Alvo -->
+                <section class="audience" id="publico">
+                    <h1 class="section-title"><i class="fas fa-users"></i> Público-Alvo</h1>
+                    <div class="audience-content">
+                        <div class="audience-text">
+                            <p>O livro e o site destinam-se a jovens adultos interessados em literatura gótica e narrativas psicológicas complexas. Adequei o conteúdo através de:</p>
+                            <ul>
+                                <li><strong>Linguagem:</strong> Escrito em prosa poética e detalhista para evocar intensidade e imagens vividas através da narrativa.</li>
+                                <li><strong>Temas:</strong> Abordagem sensível de traumas, com avisos de conteúdo potencialmente perturbadores.</li>
+                                <li><strong>Design do site:</strong> Paleta sombria mas legível, compatível com a estética do livro.</li>
+                            </ul>
+                            
+                            <p>O conteúdo foi pensado para:</p>
+                            <ul>
+                                <li>Fãs de histórias góticas e psicológicas</li>
+                                <li>Leitores que apreciam narrativas simbólicas e camadas de interpretação</li>
+                                <li>Pessoas interessadas em explorar temas como trauma, manipulação e ciclos de violência</li>
+                            </ul>
+                        </div>
+                        <div class="process-media-container">
+                            <div class="process-media">
+                                <img src="banner.jpg" alt="Banner representativo do público-alvo" class="clickable-image" onclick="openLightbox('banner.jpg', 'Banner representativo da atmosfera do projeto')">
+                                <p class="caption">Banner representativo da atmosfera do projeto</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Personagens -->
+                <section class="personagens" id="personagens">
+                    <h1 class="section-title"><i class="fas fa-user"></i> Personagens</h1>
+                   
+                    <div class="character-grid">
+                        <!-- Baal -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="icon-baal.png" alt="Personagem Baal" class="character-main-image clickable-image" onclick="openLightbox('icon-baal.png', 'Personagem Baal')">
+                            </div>
+                            <div class="character-info">
+                                <h2 class="subtitle">Baal</h2>
+                                <p><strong>Inspiração:</strong></p>
+                                <ul>
+                                    <li>Walter White (Breaking Bad) - transformação em vilão</li>
+                                    <li>Alastor (Hazbin Hotel) - carisma sinistro</li>
+                                    <li>Demônio Baal da Goetia - simbolismo oculto</li>
+                                    <li>Sadismo das pessoas</li>
+                                </ul>
+                                <p><strong>Símbolo:</strong> Personificação do mal, corrupção da inocência</p>
+                                <p><strong>Características:</strong></p>
+                                <ul>
+                                    <li>Manipulador e carismático</li>
+                                    <li>Poderoso e enigmático</li>
+                                </ul>
+                            </div>
+                            <div class="reference-grid">
+                                <img src="walter-white.png" alt="Walter White (Breaking Bad)" class="reference-image clickable-image" onclick="openLightbox('walter-white.png', 'Inspiração: Walter White (Breaking Bad)')">
+                                <img src="alastor.png" alt="Alastor (Hazbin Hotel)" class="reference-image clickable-image" onclick="openLightbox('alastor.png', 'Inspiração: Alastor (Hazbin Hotel)')">
+                                <img src="goetia.png" alt="Demônio Baal da Goetia" class="reference-image clickable-image" onclick="openLightbox('goetia.png', 'Inspiração: Demônio Baal da Goetia')">
+                            </div>
+                        </div>
+
+                        <!-- Amélia -->
+                        <div class="character-card">
+                           <div class="character-image">
+                                <img src="icon-amelia.png" alt="Personagem Amélia" class="character-main-image clickable-image" onclick="openLightbox('icon-amelia.png', 'Personagem Amélia')">
+                            </div>
+                            <div class="character-info">
+                                <h2 class="subtitle">Amélia</h2>
+                                <p><strong>Inspiração:</strong></p>
+                                <ul>
+                                    <li>Traços e cores que transmitissem delicadeza, paz e humildade</li>
+                                </ul>
+                                <p><strong>Símbolo:</strong> Pureza corrompida, inocência destruída</p>
+                                <p><strong>Características:</strong></p>
+                                <ul>
+                                    <li>Inocente e ingênua no início</li>
+                                    <li>Mártir que sofre nas mãos de Baal</li>
+                                    <li>Vítima de manipulação psicológica</li>
+                                    <li>Mãe protetora apesar de tudo</li>
+                                </ul>
+                            </div>
+                            <div class="reference-grid">
+                                <img src="ameliaref.jpg" alt="Referência visual para Amélia" class="reference-image clickable-image" onclick="openLightbox('ameliaref.png', 'Inspiração para Amélia')">
+                                <img src="ameliaref2.jpg" alt="Outra referência visual para Amélia" class="reference-image clickable-image" onclick="openLightbox('ameliaref2.jpg', 'Outra inspiração para Amélia')">
+                            </div>
+                        </div>
+
+                        <!-- Ângela -->
+                        <div class="character-card">
+                           <div class="character-image">
+                                <img src="icon-angy.png" alt="Personagem Ângela" class="character-main-image clickable-image" onclick="openLightbox('icon-angy.png', 'Personagem Ângela')">
+                            </div>
+                            <div class="character-info">
+                                <h2 class="subtitle">Ângela</h2>
+                                <p><strong>Inspiração:</strong> Ambessa (Arcane) - força física e moral</p>
+                                <p><strong>Símbolo:</strong> Anjo da guarda, o que Amélia poderia ter sido</p>
+                                <p><strong>Características:</strong></p>
+                                <ul>
+                                    <li>Fortaleza física e barreira emocional</li>
+                                    <li>Lealdade cega</li>
+                                    <li>Representa a esperança perdida</li>
+                                </ul>
+                            </div>
+                             <div class="reference-grid">
+                                <img src="ambessa-medarda.webp" alt="Ambessa (Arcane)" class="reference-image clickable-image" onclick="openLightbox('ambessa-medarda.webp', 'Inspiração: Ambessa (Arcane)')">
+                                <img src="angyref.webp" alt="Referência visual para Ângela" class="reference-image clickable-image" onclick="openLightbox('angyref.webp', 'Inspiração para Ângela')">
+                            </div>
+                        </div>
+                       
+                        <!-- Bonnie -->
+                        <div class="character-card">
+                           <div class="character-image">
+                                <img src="icon-bonnie.png" alt="Personagem Bonnie" class="character-main-image clickable-image" onclick="openLightbox('icon-bonnie.png', 'Personagem Bonnie')">
+                            </div>
+                            <div class="character-info">
+                                <h2 class="subtitle">Bonnie (Benedicta)</h2>
+                                <p><strong>Símbolo:</strong> Fênix, renascimento do trauma</p>
+                                <p><strong>Características:</strong></p>
+                                <ul>
+                                    <li>Herditariedade da dor - carrega o trauma da mãe</li>
+                                    <li>Ódio transformado em força</li>
+                                    <li>Nome significa "Abençoada" - ironia trágica</li>
+                                    <li>Narradora da história</li>
+                                </ul>
+                            </div>
+                             <div class="reference-grid">
+                                <img src="raven.jpg" alt="Referência visual para Bonnie" class="reference-image clickable-image" onclick="openLightbox('raven.jpg', 'Inspiração para Bonnie')">
+                            </div>
+                        </div>
+
+                        <!-- Feiticeiro -->
+                        <div class="character-card">
+                           <div class="character-image">
+                                <img src="icon-mago.png" alt="Personagem Feiticeiro" class="character-main-image clickable-image" onclick="openLightbox('icon-mago.png', 'Personagem Feiticeiro')">
+                            </div>
+                            <div class="character-info">
+                                <h2 class="subtitle">Feiticeiro</h2>
+                                <p><strong>Símbolo:</strong> Ermita, sabedoria e transição</p>
+                                <p><strong>Características:</strong></p>
+                                <ul>
+                                    <li>Figura de sabedoria e orientação</li>
+                                    <li>Representa a possibilidade de superação</li>
+                                    <li>Guia espiritual para Amélia</li>
+                                    <li>Voz da razão em meio ao caos</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                       
+
+                    <div class="character-table">
+                        <h2 class="subtitle">Resumo dos Personagens</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Personagem</th>
+                                    <th>Símbolo</th>
+                                    <th>Referência Cultural</th>
+                                    <th>Função Narrativa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Amélia</td>
+                                    <td>Inocência, Pureza corrompida</td>
+                                    <td>Mártir</td>
+                                    <td>Vítima central, origem do conflito</td>
+                                </tr>
+                                <tr>
+                                    <td>Baal</td>
+                                    <td>Personificação do mal</td>
+                                    <td>Diabo</td>
+                                    <td>Antagonista, Vilão</td>
+                                </tr>
+                                <tr>
+                                    <td>Ângela</td>
+                                    <td>Anjo da guarda, Esperança</td>
+                                    <td>Anjo caído</td>
+                                    <td>Redenção</td>
+                                </tr>
+                                <tr>
+                                    <td>Feiticeiro</td>
+                                    <td>Sabedoria, Transição</td>
+                                    <td>Ermita, oráculo</td>
+                                    <td>Guia</td>
+                                </tr>
+                                <tr>
+                                    <td>Bonnie</td>
+                                    <td>Herança traumática</td>
+                                    <td>Fênix</td>
+                                    <td>Continuadora do ciclo</td>
+                                </tr>
+                                <tr>
+                                    <td>Aldeões</td>
+                                    <td>Contágio social, Preconceito</td>
+                                    <td>Inquisição</td>
+                                    <td>Força antagonista coletiva</td>
+                                </tr>
+                                <tr>
+                                    <td>Pais de Amélia</td>
+                                    <td>Ignorância culposa</td>
+                                    <td>Pôncio Pilatos</td>
+                                    <td>Falha na proteção, origem indireta</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Símbolos -->
+                <section class="simbolos" id="simbolos">
+                    <h1 class="section-title"><i class="fas fa-magic"></i> Símbolos</h1>
+                   
+                    <div class="symbol-grid">
+                        <div class="symbol-card">
+                            <div class="symbol-image">
+                                <img src="bengala.png" alt="Bengala de ébano com serpente de esmeralda" class="clickable-image" onclick="openLightbox('bengala.png', 'Bengala de ébano com serpente de esmeralda')">
+                            </div>
+                            <div class="symbol-info">
+                                <h2 class="subtitle">Bengala de ébano com serpente de esmeralda</h2>
+                                <p><strong>Significado Primário:</strong> Representa o controle de Baal sobre Amélia (a serpente) e a esperança traída (o ébano).</p>
+                                <p><strong>Significado Secundário:</strong> Pode simbolizar o próprio Baal enroscado na pureza de Amélia.</p>
+                                <p><strong>Interpretações:</strong></p>
+                                <ul>
+                                    <li>Objeto de poder e dominação</li>
+                                    <li>Símbolo de status que esconde perigo</li>
+                                    <li>Representa a relação predatória entre Baal e Amélia</li>
+                                </ul>
+                                <p><strong>Inspiração:</strong> Imagem viral no TikTok de uma cobra enroscada em uma ave, representando aprisionamento sutil mas fatal.</p>
+                            </div>
+                        </div>
+
+                        <div class="symbol-card">
+                            <div class="symbol-image">
+                                <img src="contrato.png" alt="Contrato de Baal" class="clickable-image" onclick="openLightbox('contrato.png', 'Contrato de Baal')">
+                            </div>
+                            <div class="symbol-info">
+                                <h2 class="subtitle">O Contrato</h2>
+                                <p><strong>Significado:</strong> Corrupção do consentimento, contrato faustiano onde os pais de Amélia "vendem" a alma dela.</p>
+                                <p><strong>Elementos Chave:</strong></p>
+                                <ul>
+                                    <li>Assinaturas dos pais como selo do destino de Amélia</li>
+                                    <li>Pergaminho envelhecido simbolizando consequências duradouras</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="symbol-card">
+                            <div class="symbol-image">
+                                <img src="vestido.png" alt="Vestido verde e robe preto" class="clickable-image" onclick="openLightbox('vestido.png', 'Vestido verde e robe preto')">
+                            </div>
+                            <div class="symbol-info">
+                                <h2 class="subtitle">Vestido verde e robe preto</h2>
+                                <p><strong>Vestido verde:</strong> Representa Amélia livre e inocente, conexão com a natureza e pureza.</p>
+                                <p><strong>Robe preto:</strong> De penas de abutre simboliza a morte dessa liberdade, aprisionamento.</p>
+                                <p><strong>Transição:</strong> Quando a Amélia cobre o vestido verde com o robe preto, ela cria uma metáfora com a morte. </p>
+                                <p><strong>Inspiração:</strong> Contrastes visuais e teoria das cores</p>
+                            </div>
+                        </div>
+
+                        <div class="symbol-card">
+                            <div class="symbol-image">
+                                <img src="carru.png" alt="Carruagem de Baal" class="clickable-image" onclick="openLightbox('carru.png', 'Carruagem de Baal')">
+                            </div>
+                            <div class="symbol-info">
+                                <h2 class="subtitle">Carruagem de Baal</h2>
+                                <p><strong>Significado:</strong> Equivalente ao barco de Caronte, transportando Amélia do mundo da inocência para o mundo dos mortos, mais especifcamente o inferno.</p>
+                                <p><strong>Função Narrativa:</strong> Marco da transição irreversível na vida de Amélia.</p>
+                            </div>
+                        </div>
+
+                        <div class="symbol-card">
+                            <div class="symbol-image">
+                                <img src="icon.png" alt="Olhos vermelhos luminosos" class="clickable-image" onclick="openLightbox('icon.png', 'Olhos vermelhos luminosos - Favicon do site')">
+                            </div>
+                            <div class="symbol-info">
+                                <h2 class="subtitle">Olhos vermelhos luminosos</h2>
+                                <p><strong>Significado:</strong> Representam Baal em essência, um constante observador, que se esconde nas sombras e na penumbra.</p>
+                            </div>
+                        </div>
+
+                        <div class="symbol-card">
+                            <div class="symbol-image">
+                                <img src="titulo.png" alt="Título Ecos de Sofrimento" class="clickable-image" onclick="openLightbox('titulo.png', 'Título Ecos de Sofrimento')">
+                            </div>
+                            <div class="symbol-info">
+                                <h2 class="subtitle">Título: Ecos de Sofrimento</h2>
+                                <p><strong>Significado:</strong> Representa a natureza cíclica do trauma e como ele ressoa através das gerações.</p>
+                                <p><strong>Elementos:</strong></p>
+                                <ul>
+                                    <li>Fonte gótica e ornamentada</li>
+                                    <li>Textura envelhecida</li>
+                                    <li>Sombra vermelha sutil</li>
+                                </ul>
+                                <p><strong>Inspiração:</strong> Títulos de obras góticas clássicas e a ideia de que o sofrimento nunca é isolado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ferramentas -->
+                <section class="ferramentas" id="ferramentas">
+                    <h1 class="section-title"><i class="fas fa-tools"></i> Ferramentas Utilizadas</h1>
+                    
+                    <div class="tools-timeline">
+                        <div class="tool-phase">
+                            <h2 class="subtitle">Fase de Planeamento</h2>
+                            <div class="tool-list">
+                                <div class="tool-item">
+                                    <i class="fas fa-keyboard"></i>
+                                    <p><strong>Google Docs</strong></p>
+                                    <p>Organização de ideias e estrutura narrativa</p>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-film"></i>
+                                    <p><strong>FlipaClip</strong></p>
+                                    <p>Esboços iniciais e animação conceitual</p>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-palette"></i>
+                                    <p><strong>Clip Studio Paint</strong></p>
+                                    <p>Ilustrações iniciais e conceitos visuais</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-phase">
+                            <h2 class="subtitle">Fase de Criação</h2>
+                            <div class="tool-list">
+                                <div class="tool-item">
+                                    <i class="fas fa-palette"></i>
+                                    <p><strong>Clip Studio Paint</strong></p>
+                                    <p>Ilustrações e banda desenhada inicial e das ilustrações narrativas</p>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-keyboard"></i>
+                                    <p><strong>Google Docs</strong></p>
+                                    <p>Redação do texto do livro</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-phase">
+                            <h2 class="subtitle">Fase de Desenvolvimento Web</h2>
+                            <div class="tool-list">
+                                <div class="tool-item">
+                                    <i class="fas fa-code"></i>
+                                    <p><strong>Sublime Text</strong></p>
+                                    <p>Edição de código</p>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fas fa-code"></i>
+                                    <p><strong>Visual Studio Code</strong></p>
+                                    <p>Desenvolvimento do site</p>
+                                </div>
+                                <div class="tool-item">
+                                    <i class="fab fa-github"></i>
+                                    <p><strong>GitHub</strong></p>
+                                    <p>Hospedagem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Análise SWOT -->
+                <section class="swot-analysis" id="swot">
+                    <h1 class="section-title"><i class="fas fa-chart-line"></i> Análise SWOT</h1>
+                    
+                    <div class="swot-grid">
+                        <div class="swot-item strengths">
+                            <h2>Pontos Fortes</h2>
+                            <ul>
+                                <li>Narrativa complexa e bem estruturada</li>
+                                <li>Personagens profundos e simbolicamente ricos</li>
+                                <li>Atmosfera gótica consistente</li>
+                                <li>Integração harmoniosa entre livro e site</li>
+                                <li>Temas relevantes e atuais</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="swot-item weaknesses">
+                            <h2>Pontos Fracos</h2>
+                            <ul>
+                                <li>Produção de ilustrações demorada</li>
+                                <li>Mudança de formato durante o processo</li>
+                                <li>Complexidade pode afastar alguns leitores</li>
+                                <li>Conteúdo sensível requer avisos explícitos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="swot-item opportunities">
+                            <h2>Oportunidades</h2>
+                            <ul>
+                                <li>Expansão para outras mídias (animação, jogo)</li>
+                                <li>Parcerias com organizações de apoio a vítimas</li>
+                                <li>Discussões em grupos de leitura e acadêmicos</li>
+                                <li>Continuação da história em futuros projetos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="swot-item threats">
+                            <h2>Ameaças</h2>
+                            <ul>
+                                <li>Conteúdo sensível pode limitar público-alvo</li>
+                                <li>Concorrência com outras obras góticas</li>
+                                <li>Dificuldade em manter consistência visual</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+<section class="character-evolution">
+    <h1 class="section-title"><i class="fas fa-user-edit"></i> Galeria de Esboços</h1>
+    
+    <div class="rolodex-container">
+        <div class="rolodex-track" id="ameliaRolodex">
+            <!-- Imagens serão duplicadas via JavaScript -->
+        </div>
+    </div>
+    
+  
+</section>
+                <!-- Conclusão -->
+                <section class="conclusao" id="conclusao">
+                    <h1 class="section-title"><i class="fas fa-book"></i> Conclusão</h1>
+                    
+                    <div class="future-vision">
+                        <p>Este projeto representou uma jornada intensa de autodescoberta e crescimento criativo. Através da criação de "Ecos de Sofrimento", pude explorar não apenas técnicas multimédia, mas também temas profundos que ressoam na experiência humana.</p>
+                        
+                        <p>Os principais aprendizados incluem:</p>
+                        <ul>
+                            <li><strong>Adaptabilidade:</strong> A capacidade de mudar de formato quando necessário, transformando desafios em oportunidades.</li>
+                            <li><strong>Profundidade temática:</strong> Como abordar assuntos complexos com sensibilidade e respeito.</li>
+                            <li><strong>Integração multimédia:</strong> A importância de criar uma experiência coesa entre diferentes plataformas.</li>
+                            <li><strong>Processo criativo:</strong> A compreensão de que a criação é um processo não-linear, cheio de revisões e descobertas.</li>
+                        </ul>
+                        
+                        <p>Este projeto visa conscientizar as pessoas para se manterem alertas contra más intenções de terceiros, como expresso na mensagem final:</p>
+                        
+                        <blockquote class="quote">
+                            "A manipulação não é apenas uma fantasia assombrada, mas também a realidade de muitas pessoas que, por acreditarem tanto na bondade, serem cegas ao mal alheio, acabam por se envenenar, e assim expelir essa toxina para outros seres. Esta história visa conscientizar as pessoas para se manterem alertas contra más intenções de terceiros."
+                        </blockquote>
+                        
+                        <p>Como recurso adicional, incluo informações da <strong>APAV</strong> (Associação Portuguesa de Apoio à Vítima) para quem precisar de ajuda real com situações de abuso e manipulação: <a href="https://apav.pt/" target="_blank">https://apav.pt/</a></p>
+                        
+                        <p>O projeto continuará a evoluir, seja profissionalmente ou como um hobby com planos para:</p>
+                        <ul>
+                            <li>Expansão da história em futuros livros</li>
+                            <li>Desenvolvimento de conteúdo adicional para o site</li>
+                            <li>Criação de materiais educativos sobre os temas abordados</li>
+                        </ul>
+                        
+                        <p>Muito obrigada pela vossa atenção.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lightbox functionality with navigation
+        let currentImageIndex = 0;
+        const allImages = [];
+
+        function openLightbox(imageSrc, caption, index) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            // Get all clickable images on the page
+            const images = document.querySelectorAll('.clickable-image');
+            allImages.length = 0; // Clear array
+            images.forEach(img => allImages.push({
+                src: img.getAttribute('onclick').match(/openLightbox\('([^']+)'/)[1],
+                caption: img.nextElementSibling ? img.nextElementSibling.textContent : ''
+            }));
+            
+            currentImageIndex = index !== undefined ? index : allImages.findIndex(img => img.src === imageSrc);
+            
+            lightboxImage.src = imageSrc;
+            lightboxCaption.textContent = caption;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+// Rolodex Infinito Simplificado
+let rolodexSpeed = 2; // Velocidade fixa
+let rolodexPosition = 0;
+let rolodexAnimationId;
+let isRolodexPaused = false;
+const rolodexImages = [];
+
+function initRolodex() {
+    const rolodexTrack = document.getElementById('ameliaRolodex');
+    if (!rolodexTrack) return;
+    
+    rolodexTrack.innerHTML = '';
+
+    // Carrega imagens de lia1.jpg até lia70.jpg
+    for (let i = 1; i <= 70; i++) {
+        const img = document.createElement('img');
+        img.src = `lia${i}.jpg`;
+        img.alt = `Evolução Amélia ${i}`;
+        img.loading = 'lazy';
+        img.onclick = () => {
+            pauseRolodex();
+            openLightbox(img.src, img.alt, i-1);
+        };
+        rolodexImages.push(img);
+        rolodexTrack.appendChild(img.cloneNode(true));
+    }
+    
+    // Duplica as imagens para criar efeito infinito
+    rolodexImages.forEach(img => {
+        rolodexTrack.appendChild(img.cloneNode(true));
+    });
+    
+    startRolodex();
+}
+
+function animateRolodex() {
+    const rolodexTrack = document.getElementById('ameliaRolodex');
+    if (!rolodexTrack) return;
+    
+    rolodexPosition -= rolodexSpeed;
+    
+    // Reinicia a posição quando chega ao final
+    if (rolodexPosition < -rolodexTrack.scrollWidth / 2) {
+        rolodexPosition = 0;
+    }
+    
+    rolodexTrack.style.transform = `translateX(${rolodexPosition}px)`;
+    
+    rolodexAnimationId = requestAnimationFrame(animateRolodex);
+}
+
+function startRolodex() {
+    if (!rolodexAnimationId) {
+        animateRolodex();
+    }
+    isRolodexPaused = false;
+    updatePlayPauseIcon();
+}
+
+function pauseRolodex() {
+    cancelAnimationFrame(rolodexAnimationId);
+    rolodexAnimationId = null;
+    isRolodexPaused = true;
+    updatePlayPauseIcon();
+}
+
+function toggleRolodex() {
+    if (isRolodexPaused) {
+        startRolodex();
+    } else {
+        pauseRolodex();
+    }
+}
+
+function updatePlayPauseIcon() {
+    const icon = document.querySelector('.play-pause i');
+    if (icon) {
+        icon.className = isRolodexPaused ? 'fas fa-play' : 'fas fa-pause';
+    }
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', initRolodex);
+
+// Reinicia ao fechar lightbox
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        if (!isRolodexPaused) {
+            startRolodex();
+        }
+    }
+}
+
+// Substitua a função closeLightbox por esta versão mais robusta
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Adicione este event listener para fechar ao clicar fora da imagem
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('close-lightbox')) {
+        closeLightbox();
+    }
+});
+        function navigateLightbox(direction) {
+            currentImageIndex += direction;
+            
+            // Wrap around if at beginning or end
+            if (currentImageIndex < 0) currentImageIndex = allImages.length - 1;
+            if (currentImageIndex >= allImages.length) currentImageIndex = 0;
+            
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightboxImage.src = allImages[currentImageIndex].src;
+            lightboxCaption.textContent = allImages[currentImageIndex].caption;
+        }
+        
+
+        // Carousel functionality
+        // Atualize a função scrollCarousel para incluir os indicadores
+function scrollCarousel(direction) {
+    const carousel = document.querySelector('.comic-slides');
+    const slideWidth = carousel.querySelector('.comic-slide').offsetWidth;
+    carousel.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+    
+    // Atualiza os indicadores após a rolagem
+    setTimeout(updateIndicators, 300);
+}
+
+// Função para criar e atualizar os indicadores
+function setupCarouselIndicators() {
+    const carousel = document.querySelector('.comic-slides');
+    const slides = carousel.querySelectorAll('.comic-slide');
+    const indicatorsContainer = document.getElementById('carouselIndicators');
+    
+    // Limpa os indicadores existentes
+    indicatorsContainer.innerHTML = '';
+    
+    // Cria um indicador para cada slide
+    slides.forEach((slide, index) => {
+        const indicator = document.createElement('div');
+        indicator.className = 'carousel-indicator';
+        indicator.addEventListener('click', () => {
+            carousel.scrollTo({
+                left: slide.offsetLeft,
+                behavior: 'smooth'
+            });
+            setTimeout(updateIndicators, 300);
+        });
+        indicatorsContainer.appendChild(indicator);
+    });
+    
+    // Atualiza os indicadores inicialmente
+    updateIndicators();
+    
+    // Atualiza os indicadores quando o usuário faz scroll manual
+    carousel.addEventListener('scroll', updateIndicators);
+}
+
+// Função para atualizar o indicador ativo
+function updateIndicators() {
+    const carousel = document.querySelector('.comic-slides');
+    const slides = carousel.querySelectorAll('.comic-slide');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    
+    // Encontra o slide mais visível
+    let mostVisibleIndex = 0;
+    let mostVisibleAmount = 0;
+    
+    slides.forEach((slide, index) => {
+        const rect = slide.getBoundingClientRect();
+        const visibleWidth = Math.min(rect.right, window.innerWidth) - Math.max(rect.left, 0);
+        const visibleRatio = visibleWidth / rect.width;
+        
+        if (visibleRatio > mostVisibleAmount) {
+            mostVisibleAmount = visibleRatio;
+            mostVisibleIndex = index;
+        }
+    });
+    
+    // Atualiza os indicadores
+    indicators.forEach((indicator, index) => {
+        if (index === mostVisibleIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+// Chame esta função quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.comic-carousel');
+    const slidesContainer = carousel.querySelector('.comic-slides');
+    const slides = carousel.querySelectorAll('.comic-slide');
+    const prevBtn = carousel.querySelector('.carousel-nav button:first-child');
+    const nextBtn = carousel.querySelector('.carousel-nav button:last-child');
+    const indicatorsContainer = carousel.querySelector('.carousel-indicators');
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    // Criar indicadores
+    slides.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('carousel-indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    // Navegação
+    prevBtn.addEventListener('click', () => navigate(-1));
+    nextBtn.addEventListener('click', () => navigate(1));
+
+    // Função de navegação
+    function navigate(direction) {
+        if (isAnimating) return;
+        
+        isAnimating = true;
+        currentIndex = (currentIndex + direction + slides.length) % slides.length;
+        
+        slidesContainer.scrollTo({
+            left: slides[currentIndex].offsetLeft,
+            behavior: 'smooth'
+        });
+        
+        updateIndicators();
+        
+        // Resetar flag após a animação
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }
+
+    // Ir para slide específico
+    function goToSlide(index) {
+        if (isAnimating || index === currentIndex) return;
+        
+        isAnimating = true;
+        currentIndex = index;
+        
+        slidesContainer.scrollTo({
+            left: slides[currentIndex].offsetLeft,
+            behavior: 'smooth'
+        });
+        
+        updateIndicators();
+        
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }
+
+    // Atualizar indicadores
+    function updateIndicators() {
+        const indicators = carousel.querySelectorAll('.carousel-indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    // Observador para detectar slide visível
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const newIndex = Array.from(slides).indexOf(entry.target);
+                if (newIndex !== -1 && newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateIndicators();
+                }
+            }
+        });
+    }, { threshold: 0.7 });
+
+    slides.forEach(slide => observer.observe(slide));
+});
+
+// Close lightbox with ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+            // Navigation with arrow keys
+            else if (document.getElementById('lightbox').style.display === 'block') {
+                if (e.key === 'ArrowLeft') {
+                    navigateLightbox(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateLightbox(1);
+                }
+            }
+        });
+
+        // Menu Toggle Functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const sideMenu = document.querySelector('.side-menu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        menuToggle.addEventListener('click', () => {
+            sideMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            if (sideMenu.classList.contains('active')) {
+                menuToggle.style.left = sideMenu.offsetWidth + 'px';
+            } else {
+                menuToggle.style.left = '0';
+            }
+        });
+
+        menuOverlay.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuToggle.style.left = '0';
+        });
+
+        window.addEventListener('resize', () => {
+            if (sideMenu.classList.contains('active')) {
+                menuToggle.style.left = sideMenu.offsetWidth + 'px';
+            }
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Close menu when clicking on a menu item (mobile)
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 991) {
+                    sideMenu.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    <!-- Scripts necessários para o Bootstrap 4 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
