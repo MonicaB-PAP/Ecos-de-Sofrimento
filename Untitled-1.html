@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="icon.png" type="image/png">
+    <title>Bastidores - Ecos de Sofrimento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus+SC&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="making-off.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="historia.html">História</a></li>
+                    <li class="nav-item"><a class="nav-link" href="personagens.html">Personagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="bastidores.html">Bastidores</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Lateral Fixo -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-items">
+            <div class="menu-item active" onclick="showSection('conceito')">O Conceito</div>
+            <div class="menu-item" onclick="showSection('personagens')">Personagens</div>
+            <div class="menu-item" onclick="showSection('simbolismo')">Simbolismo</div>
+            <div class="menu-item" onclick="showSection('poderes')">Sistema de Poderes</div>
+            <div class="menu-item" onclick="showSection('elementos')">Elementos da História</div>
+            <div class="menu-item" onclick="showSection('processo')">Processo Criativo</div>
+            <div class="menu-item" onclick="showSection('atividades')">Atividades</div>
+            <div class="menu-item" onclick="showSection('testes')">Testes e Validação</div>
+            <div class="menu-item" onclick="showSection('distribuicao')">Distribuição</div>
+        </div>
+    </div>
+
+    <!-- Botão para alternar menu em mobile -->
+    <button class="menu-toggle" id="menuToggle">›</button>
+
+    <!-- Container principal -->
+    <div class="main-container">
+        <!-- Conteúdo da Carta -->
+        <div class="ancient-letter">
+            <div class="letter-content" id="letterContent">
+                <!-- Seções de conteúdo serão inseridas aqui pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão voltar ao topo -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
+            <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
+            <p>Aluna: Mónica Bonito | Orientador: António Casaca</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Conteúdo dinâmico das seções
+        const sectionsContent = {
+            conceito: `
+                <h2 class="section-title">O Conceito por Trás de "Ecos de Sofrimento"</h2>
+                <p>"Ecos de Sofrimento" nasceu da fascinação por histórias góticas que exploram a natureza humana e os ciclos de trauma. O objetivo era criar uma narrativa onde o mal não é apenas uma entidade externa, mas algo que se propaga através das gerações.</p>
+                
+                <div class="gothic-box">
+                    <h3>Análise SWOT da Ideia</h3>
+                    <table class="swot-table">
+                        <tr>
+                            <th>Forças</th>
+                            <th>Fraquezas</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Boa premissa</li>
+                                    <li>Criatividade</li>
+                                    <li>Ambientação envolvente</li>
+                                    <li>Instiga a literatura</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Complexidade pode confundir alguns leitores</li>
+                                    <li>História tem partes com um ritmo mais lento</li>
+                                    <li>Conteúdos sensíveis para certos leitores</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Oportunidades</th>
+                            <th>Ameaças</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Expansão da história</li>
+                                    <li>Exploração de temas sociais</li>
+                                    <li>Adaptação para outros meios</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Recepção sensível à temática</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="quote">
+                    "A manipulação não é apenas uma fantasia assombrada, mas também a realidade de muitas pessoas que, por acreditarem tanto na bondade, serem cegas ao mal alheio, acabam por se envenenar, e assim expelir essa toxina para outros seres."
+                </div>
+                
+                <div class="gothic-box">
+                    <h3>Enquadramento do Projeto</h3>
+                    <p>A ideia para o projeto surgiu no verão de 2023, ao ouvir a música "Enemies" de Imagine Dragons, quando me apareceu um cenário na cabeça: uma cena de luta entre um herói e uma vilã, onde a vilã era a protagonista.</p>
+                    
+                    <div class="image-placeholder" style="min-height: 200px;">
+                        <p>Imagem 1- Animação inicial da ideia, feita na aplicação móvel FlipaClip</p>
+                    </div>
+                    
+                    <p>Anotei todas as ideias que me ocorreram à mente:</p>
+                    <ul>
+                        <li>Documentário/Entrevista</li>
+                        <li>Photoshop realista de imagens</li>
+                        <li>Criação de um anúncio</li>
+                        <li>Animação 2D</li>
+                        <li>Livro</li>
+                    </ul>
+                    
+                    <p>Após analisar as propostas com os professores orientadores, decidi optar pela criação de um livro, inicialmente em formato de banda desenhada, mas que mais tarde evoluiu para uma estrutura narrativa.</p>
+                </div>
+            `,
+            
+            personagens: `
+                <h2 class="section-title">Análise dos Personagens</h2>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Amélia</h3>
+                    <p><strong>Símbolo:</strong> Inocência e ingenuidade</p>
+                    <p><strong>Referência cultural:</strong> Mártir</p>
+                    <p>Representa a inocência e ingenuidade, uma mártir que cai nas garras do mal. Sua jornada simboliza como a bondade pode ser corrompida quando confrontada com a malícia pura.</p>
+                    <div class="image-placeholder" style="min-height: 150px;">
+                        <p>Protótipos dos personagens (Imagem 6)</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <h3 class="character-name">Baal (Beelzebub)</h3>
+                    <p><strong>Símbolo:</strong> Personificação e alegoria para o mal</p>
+                    <p><strong>Referência cultural:</strong> Diabo</p>
+                    <p>A personificação do mal, uma alegoria para o diabo. Baal manipula os eventos para seu próprio prazer, representando como o mal pode se infiltrar nas vidas das pessoas.</p>
+                    <div class="image-gallery">
+                        <div class="image-placeholder" style="min-height: 150px;">
+                            <p>Imagem 7- Walter White (inspiração)</p>
+                        </div>
+                        <div class="image-placeholder" style="min-height: 150px;">
+                            <p>Imagem 8- Alastor (inspiração)</p>
+                        </div>
+                        <div class="image-placeholder" style="min-height: 150px;">
+                            <p>Imagem 9- Demónio Baal (inspiração)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Outros personagens... -->
+            `,
+            
+            // Continuação das outras seções...
+            simbolismo: `...`,
+            poderes: `...`,
+            elementos: `...`,
+            processo: `...`,
+            atividades: `...`,
+            testes: `...`,
+            distribuicao: `...`
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa com a primeira seção
+            document.getElementById('letterContent').innerHTML = sectionsContent.conceito;
+            
+            // Menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const sideMenu = document.getElementById('sideMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('active');
+                menuToggle.textContent = sideMenu.classList.contains('active') ? '‹' : '›';
+            });
+            
+            // Scroll navbar effect
+            window.addEventListener('scroll', function() {
+                // Back to top button
+                const backToTop = document.getElementById('backToTop');
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'flex';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+            
+            // Back to top functionality
+            document.getElementById('backToTop').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        function showSection(sectionId) {
+            // Esconde todas as seções
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Mostra a seção selecionada
+            document.getElementById('letterContent').innerHTML = sectionsContent[sectionId];
+            
+            // Adiciona a classe active ao item do menu correspondente
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                if (item.getAttribute('onclick').includes(sectionId)) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Fecha o menu em mobile
+            if (window.innerWidth <= 992) {
+                document.getElementById('sideMenu').classList.remove('active');
+                document.getElementById('menuToggle').textContent = '›';
+            }
+            
+            // Scroll suave para o topo da seção
+            window.scrollTo({
+                top: document.querySelector('.main-container').offsetTop - 70,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
