@@ -144,55 +144,56 @@
 
         // Código do Labirinto
         function initMazeGame() {
-            class MazeGame {
-                constructor() {
-                    this.maze = document.getElementById('maze');
-                    this.character = document.getElementById('character');
-                    this.gameContainer = document.querySelector('.maze-container');
-                    this.gameWrapper = document.querySelector('.game-wrapper');
-                    this.trailSvg = document.getElementById('trail');
-                    this.miniTrailSvg = document.getElementById('mini-trail');
-                    this.miniChar = document.getElementById('mini-char');
-                    this.loading = document.querySelector('.loading');
-                    this.resetButton = document.getElementById('reset-button');
-                    this.mapButton = document.getElementById('map-button');
-                    this.miniMapContainer = document.querySelector('.mini-map-container');
-                    this.mapOverlay = document.getElementById('map-overlay');
-                    
-                    this.leftArrow = document.getElementById('left-arrow');
-                    this.upArrow = document.getElementById('up-arrow');
-                    this.downArrow = document.getElementById('down-arrow');
-                    this.rightArrow = document.getElementById('right-arrow');
-                    
-                    this.state = {
-                        position: { x: 0, y: 0 },
-                        charSize: { width: 600, height: 600 },
-                        mazeSize: { width: 0, height: 0 },
-                        moveSpeed: 8,
-                        isInitialized: false,
-                        miniMapVisible: true,
-                        trailPoints: [],
-                        miniTrailPoints: [],
-                        isMobile: window.innerWidth <= 768,
-                        moveInterval: null,
-                        activeDirection: null,
-                        movementBounds: {
-                            minX: 0,
-                            maxX: 0,
-                            minY: 0,
-                            maxY: 0
-                        },
-                        lastDirection: null,
-                        lastPosition: null,
-                        mazeCanvas: null,
-                        mazeCtx: null,
-                        collisionCheckPoints: [],
-                        trailCollisionCheckInterval: 3,
-                        gamePaused: false
-                    };
-                    
-                    this.init();
-                }
+    class MazeGame {
+        constructor() {
+            this.maze = document.getElementById('maze');
+            this.character = document.getElementById('character');
+            this.gameContainer = document.querySelector('.maze-container');
+            this.gameWrapper = document.querySelector('.game-wrapper');
+            this.trailSvg = document.getElementById('trail');
+            this.miniTrailSvg = document.getElementById('mini-trail');
+            this.miniChar = document.getElementById('mini-char');
+            this.loading = document.querySelector('.loading');
+            this.resetButton = document.getElementById('reset-button');
+            this.mapButton = document.getElementById('map-button');
+            this.miniMapContainer = document.querySelector('.mini-map-container');
+            this.mapOverlay = document.getElementById('map-overlay');
+            
+            this.leftArrow = document.getElementById('left-arrow');
+            this.upArrow = document.getElementById('up-arrow');
+            this.downArrow = document.getElementById('down-arrow');
+            this.rightArrow = document.getElementById('right-arrow');
+            
+            this.state = {
+                position: { x: 0, y: 0 },
+                charSize: { width: 50, height: 50 }, // Tamanho reduzido
+                mazeSize: { width: 0, height: 0 },
+                moveSpeed: 10, // Velocidade ajustada
+                isInitialized: false,
+                miniMapVisible: true,
+                trailPoints: [],
+                miniTrailPoints: [],
+                isMobile: window.innerWidth <= 768,
+                moveInterval: null,
+                activeDirection: null,
+                movementBounds: {
+                    minX: 0,
+                    maxX: 0,
+                    minY: 0,
+                    maxY: 0
+                },
+                lastDirection: null,
+                lastPosition: null,
+                mazeCanvas: null,
+                mazeCtx: null,
+                collisionCheckPoints: [],
+                trailCollisionCheckInterval: 3,
+                gamePaused: false,
+                collisionRadius: 15 // Raio de colisão reduzido
+            };
+            
+            this.init();
+        }
 
                 init() {
                     this.maze.onload = () => this.setupGame();
