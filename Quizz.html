@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="text-center">
-    <a href="Jogos.html" class="back-to-games">Voltar aos Jogos</a>
+    <a href="jogos.html" class="back-to-games">Voltar aos Jogos</a>
 </div>
 
     <!-- Rodapé -->
@@ -115,15 +115,25 @@
                     { text: "Continuar a amar, mesmo no meio da destruição.", character: "Amélia" },
                     { text: "Impor a minha vontade sobre o mundo.", character: "Baal" },
                     { text: "Conhecer os segredos que os outros ignoram.", character: "Feiticeiro" },
-                    { text: "Proteger os frágeis, mesmo que me corrompa no processo.", character: "Ângela" }
+                    { text: "Proteger os frágeis, mesmo que me quebre no processo.", character: "Ângela" }
                 ]
-            
+            },
+            {
+                question: "Numa noite sem estrelas, o que procurarias?",
+                options: [
+                    { text: "Um raio de esperança esquecido no escuro.", character: "Amélia" },
+                    { text: "Oportunidade para moldar o mundo a meu favor.", character: "Baal" },
+                    { text: "Um sentido oculto por detrás da ausência de luz.", character: "Feiticeiro" },
+                    { text: "Um abrigo seguro para mim e para os que amo.", character: "Ângela" }
+                ]
+            },
+            {
                 question: "Se te fosse dada a escolha entre justiça e misericórdia, o que escolherias?",
                 options: [
                     { text: "Misericórdia. Sempre.", character: "Amélia" },
                     { text: "Justiça. Mesmo que brutal.", character: "Baal" },
                     { text: "A verdade, acima dos dois.", character: "Feiticeiro" },
-                    { text: "Misericórdia, mesmo que injusto.", character: "Ângela" }
+                    { text: "O alívio para quem sofre, mesmo que injusto.", character: "Ângela" }
                 ]
             },
             {
@@ -158,7 +168,7 @@
                 options: [
                     { text: "Mesmo ferido, continuo a acreditar na luz.", character: "Amélia" },
                     { text: "O mundo é dos que têm coragem para tomá-lo.", character: "Baal" },
-                    { text: "Não existe acaso — apenas caminhos por descobrir.", character: "Feiticeiro" },
+                    { text: "Não existe acaso — apenas caminhos ocultos.", character: "Feiticeiro" },
                     { text: "Não nasci para grandes feitos, mas para proteger pequenos milagres.", character: "Ângela" }
                 ]
             },
@@ -167,7 +177,7 @@
                 options: [
                     { text: "Um sentimento puro que resiste ao tempo.", character: "Amélia" },
                     { text: "Uma fraqueza perigosa.", character: "Baal" },
-                    { text: "Uma energia espiritual.", character: "Feiticeiro" },
+                    { text: "Uma energia ancestral.", character: "Feiticeiro" },
                     { text: "Um dever silencioso.", character: "Ângela" }
                 ]
             },
@@ -176,7 +186,7 @@
                 options: [
                     { text: "A memória daqueles que amo.", character: "Amélia" },
                     { text: "O desejo de não ser derrotado.", character: "Baal" },
-                    { text: "A certeza de um propósito.", character: "Feiticeiro" },
+                    { text: "A certeza de um propósito oculto.", character: "Feiticeiro" },
                     { text: "A responsabilidade de proteger os que confiam em mim.", character: "Ângela" }
                 ]
             }
@@ -253,10 +263,10 @@
             let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
 
             const descriptions = {
-                "Amélia": "És como a Amélia - cheia de imaginação e sonhos! O teu coração é puro e vês magia em tudo.",
-                "Baal": "És como o Baal - forte e impetuoso! Gostas que tudo tenha a sua ordem e lugar.",
-                "Ângela": "És como a Ângela - amiga de todos! Sempre pronta para ajudar e proteger.",
-                "Feiticeiro": "És como o Feiticeiro - inteligente e misterioso! Adoras aprender coisas novas e descobrir segredos."
+                "Amélia": "És como a Amélia - cheia de imaginação e sonhos! O teu coração é puro e vês magia em tudo. Mas cuidado para não confiares demais em quem não merece!",
+                "Baal": "És como o Baal - forte e organizado! Gostas que tudo tenha a sua ordem e lugar. Mas lembra-te que às vezes é bom deixar as coisas um pouco desarrumadas!",
+                "Ângela": "És como a Ângela - amiga de todos! Sempre pronta para ajudar e proteger. Mas não te esqueças de cuidar de ti também, está bem?",
+                "Feiticeiro": "És como o Feiticeiro - inteligente e misterioso! Adoras aprender coisas novas e descobrir segredos. Mas não fiques só nos livros, vai brincar também!"
             };
 
             const characterImages = {
