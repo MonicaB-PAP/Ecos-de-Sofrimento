@@ -152,15 +152,17 @@
             max-height: none;
         }
 
-        #character {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            pointer-events: none;
-            image-rendering: pixelated;
-        }
+      #character {
+    position: absolute;
+    width: 800px !important;  /* Tamanho aumentado */
+    height: 800px !important; /* Tamanho aumentado */
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    image-rendering: pixelated;
+    transition: all 0.1s ease;
+}
+
 
         .trail-path {
             position: absolute;
@@ -183,8 +185,8 @@
         /* Mini-mapa - Estilos base */
         .mini-map-container {
             position: absolute;
-            width: 180px;
-            height: 180px;
+            width: 140px;
+            height: 140px;
             background: rgba(255, 255, 255, 0.8);
             border: 2px solid #885e44;
             border-radius: 8px;
@@ -217,10 +219,10 @@
 
         .mini-map-character {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            border: 2px solid white;
+            width: 5px;
+            height: 5px;
+            background-color: red;
+          
             border-radius: 50%;
             transform: translate(-50%, -50%);
             z-index: 3;
@@ -508,15 +510,24 @@
             }
 
             .mini-map-container {
-                width: 140px;
-                height: 140px;
+                width: 100px;
+                height: 100px;
             }
 
-            #character {
-                width: 50px;
-                height: 50px;
-            }
+           #character {
+    width: 700px !important;
+    height: 700px!important;
+    transition: transform 0.1s ease;
+}
 
+.mini-map-character {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.1s ease;
+}
             .touch-controls {
                 display: grid;
                 width: 150px;
@@ -541,13 +552,13 @@
             }
 
             .mini-map-container {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
             }
 
             #character {
-                width: 45px;
-                height: 45px;
+                width: 700px;
+                height: 700px;
             }
 
             .touch-controls {
