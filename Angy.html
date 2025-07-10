@@ -59,31 +59,78 @@
         </div>
     </div>
 <!-- Adicione esta seção após a sinopse ou onde desejar no seu HTML -->
+<!-- Adicione esta seção após a sinopse ou onde desejar no seu HTML -->
 <section class="gallery-section py-5">
     <div class="d-flex justify-content-center">
         <div class="synopsis" style="max-width: 1200px;">
-            <h3>Galeria de Imagens</h3>
+            <h3>Galeria de Mídia</h3>
+            
+            <!-- Abas para alternar entre Imagens e Vídeos -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="mediaTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="images-tab" data-toggle="tab" href="#images" role="tab">Imagens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab">Vídeos</a>
+                </li>
+            </ul>
+            
             <div class="highlight">
-                <div class="gallery-container">
-                    <!-- As imagens serão geradas dinamicamente via JavaScript -->
-                    <div class="gallery-grid" id="galleryGrid"></div>
+                <div class="tab-content" id="mediaTabsContent">
+                    <!-- Tab de Imagens -->
+                    <div class="tab-pane fade show active" id="images" role="tabpanel">
+                        <div class="gallery-container">
+                            <div class="gallery-grid" id="galleryGrid"></div>
+                            
+                            <!-- Modal para imagem expandida -->
+                            <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content bg-dark border border-secondary">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img id="expandedImage" class="img-fluid" src="" alt="Imagem expandida">
+                                        </div>
+                                        <div class="modal-footer border-0 justify-content-between">
+                                            <button class="btn btn-pap" id="prevBtn">&larr; Anterior</button>
+                                            <span id="imageCounter" class="text-light"></span>
+                                            <button class="btn btn-pap" id="nextBtn">Próxima &rarr;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <!-- Modal para imagem expandida -->
-                    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content bg-dark border border-secondary">
-                                <div class="modal-header border-0">
-                                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body text-center">
-                                    <img id="expandedImage" class="img-fluid" src="" alt="Imagem expandida">
-                                </div>
-                                <div class="modal-footer border-0 justify-content-between">
-                                    <button class="btn btn-pap" id="prevBtn">&larr; Anterior</button>
-                                    <span id="imageCounter" class="text-light"></span>
-                                    <button class="btn btn-pap" id="nextBtn">Próxima &rarr;</button>
+                    <!-- Tab de Vídeos -->
+                    <div class="tab-pane fade" id="videos" role="tabpanel">
+                        <div class="video-gallery-container">
+                            <div class="video-gallery-grid" id="videoGalleryGrid"></div>
+                            
+                            <!-- Modal para vídeo expandido -->
+                            <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content bg-dark border border-secondary">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <video id="expandedVideo" class="img-fluid" controls>
+                                                <source src="" type="video/mp4">
+                                                Seu navegador não suporta vídeos HTML5.
+                                            </video>
+                                        </div>
+                                        <div class="modal-footer border-0 justify-content-between">
+                                            <button class="btn btn-pap" id="prevVideoBtn">&larr; Anterior</button>
+                                            <span id="videoCounter" class="text-light"></span>
+                                            <button class="btn btn-pap" id="nextVideoBtn">Próximo &rarr;</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +139,6 @@
             </div>
         </div>
     </div>
-    
 </section>
     <footer>
         <div class="footer-content">
@@ -172,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateModalImage() {
-        expandedImage.src = `lia${currentModalIndex}.jpg`;
+        expandedImage.src = `lia${currentModalIndex}.png`;
         imageCounter.textContent = `${currentModalIndex} / ${totalImages}`;
     }
     
@@ -207,6 +253,86 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-
+<!-- Adicione esta seção após a sinopse ou onde desejar no seu HTML -->
+<section class="gallery-section py-5">
+    <div class="d-flex justify-content-center">
+        <div class="synopsis" style="max-width: 1200px;">
+            <h3>Galeria de Mídia</h3>
+            
+            <!-- Abas para alternar entre Imagens e Vídeos -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="mediaTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="images-tab" data-toggle="tab" href="#images" role="tab">Imagens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab">Vídeos</a>
+                </li>
+            </ul>
+            
+            <div class="highlight">
+                <div class="tab-content" id="mediaTabsContent">
+                    <!-- Tab de Imagens -->
+                    <div class="tab-pane fade show active" id="images" role="tabpanel">
+                        <div class="gallery-container">
+                            <div class="gallery-grid" id="galleryGrid"></div>
+                            
+                            <!-- Modal para imagem expandida -->
+                            <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content bg-dark border border-secondary">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img id="expandedImage" class="img-fluid" src="" alt="Imagem expandida">
+                                        </div>
+                                        <div class="modal-footer border-0 justify-content-between">
+                                            <button class="btn btn-pap" id="prevBtn">&larr; Anterior</button>
+                                            <span id="imageCounter" class="text-light"></span>
+                                            <button class="btn btn-pap" id="nextBtn">Próxima &rarr;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab de Vídeos -->
+                    <div class="tab-pane fade" id="videos" role="tabpanel">
+                        <div class="video-gallery-container">
+                            <div class="video-gallery-grid" id="videoGalleryGrid"></div>
+                            
+                            <!-- Modal para vídeo expandido -->
+                            <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content bg-dark border border-secondary">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <video id="expandedVideo" class="img-fluid" controls>
+                                                <source src="" type="video/mp4">
+                                                Seu navegador não suporta vídeos HTML5.
+                                            </video>
+                                        </div>
+                                        <div class="modal-footer border-0 justify-content-between">
+                                            <button class="btn btn-pap" id="prevVideoBtn">&larr; Anterior</button>
+                                            <span id="videoCounter" class="text-light"></span>
+                                            <button class="btn btn-pap" id="nextVideoBtn">Próximo &rarr;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
