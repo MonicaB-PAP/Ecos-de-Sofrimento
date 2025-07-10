@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/png">
-    <title>Ecos de Sofrimento - Quiz</title>
+    <title>Ecos de Sofrimento - Ângela</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Fontes -->
@@ -14,44 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nanum+Pen+Script&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="quizz.css">
+    <link rel="stylesheet" href="angy.css">
 </head>
 <body>
-    <!-- Container para as estrelas do background -->
-    <div class="stars-background">
-        <div class="star star-1">★</div>
-        <div class="star star-2">☆</div>
-        <div class="star star-3">★</div>
-        <div class="star star-4">☆</div>
-        <div class="star star-5">★</div>
-        <div class="star star-6">☆</div>
-        <div class="star star-7">★</div>
-        <div class="star star-8">☆</div>
-        <div class="star star-9">★</div>
-        <div class="star star-10">☆</div>
-        <div class="star star-11">★</div>
-        <div class="star star-12">☆</div>
-        <div class="star star-13">★</div>
-        <div class="star star-14">☆</div>
-        <div class="star star-15">★</div>
-        <div class="star star-16">☆</div>
-        <div class="star star-17">★</div>
-        <div class="star star-18">☆</div>
-        <div class="star star-19">★</div>
-        <div class="star star-20">☆</div>
-        <div class="star star-21">★</div>
-        <div class="star star-22">☆</div>
-        <div class="star star-23">★</div>
-        <div class="star star-24">☆</div>
-        <div class="star star-25">★</div>
-        <div class="star star-26">☆</div>
-        <div class="star star-27">★</div>
-        <div class="star star-28">☆</div>
-        <div class="star star-29">★</div>
-        <div class="star star-30">☆</div>
-    </div>
-
-     <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
         <a class="navbar-brand" href="index.html">Ecos de Sofrimento</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,239 +33,134 @@
         </div>
     </nav>
 
-    <!-- Seção do Quiz -->
-    <div class="quiz-main-container">
-        <div class="quiz-container">
-            <div class="drawing star"></div>
-            <div class="drawing heart"></div>
+
+    <div class="main-container">
+        <!-- Bookmarks -->
+        <div class="bookmarks">
+            <a href="Amelia.html" class="bookmark lilac" title="Amélia"></a>
+            <a href="Baal.html" class="bookmark red" title="Baal"></a>
+            <a href="Angy.html" class="bookmark turquoise" title="Ângela"></a>
+            <a href="Mago.html" class="bookmark dark-blue" title="Mago"></a>
+        </div>
+        
+        <!-- Conteúdo do livro (carta branca) -->
+        <div class="letter-container">
+            <h2 class="letter-title">Ângela</h2>
             
-            <h1>Que personagem és tu?</h1>
-            <div id="quiz">
-                <button onclick="startQuiz()">Começar Quiz</button>
+            <div class="letter-content">
+                <p>Ângela é uma mulher que vive há anos sob o domínio implacável de Baal. Trabalha como empregada na sua mansão, sempre impecável, sempre silenciosa, sempre presente. Mas, por trás da postura formal, do uniforme imaculado e do olhar contido, existe alguém profundamente quebrado.</p>
+
+                <p>Ela já foi uma militar renomada, com um grande amor e uma família invejável, composta por três filhos. A vida dela parecia perfeita, mas, como acontece com a perfeição, a estabilidade durou pouco. Um dia, o povo se revoltou, exigindo seus direitos básicos, e essa guerra popular resultou na morte de vários aristocratas, incluindo seu marido e dois de seus filhos. No meio daquele cenário caótico e mortal, Ângela não sabia o que fazer. Foi então que Baal apareceu, se apresentando como um salvador. Durante cinco anos, ele visitava sua casa todos os dias, ajudando-a a cuidar da única criança que sobrou. Mas, quando Baal se cansou da fachada, fez-lhe uma ameaça: se ela não o seguisse, ele mataria o seu filho. A partir desse momento, Ângela tornou-se sua governanta, forçada a viver sob sua dominação.</p>
+
+                <p>Apesar de tudo, uma parte dela sobreviveu. Uma pequena, mas resistente chama de esperança. E é essa parte que se manifesta sempre que ela olha para Amélia. Porque, ao vê-la, Ângela enxerga o filho que talvez ainda esteja bem, ou quem sabe as filhas que ela nunca pôde proteger. Mesmo sabendo que não pode mudar tudo, ela faz o que pode: protege com gestos silenciosos, alivia no que consegue, resiste em silêncio.</p>
+
+                <p>Ângela é o reflexo da resistência de Amélia.</p>
             </div>
-            <div id="result"></div>
         </div>
     </div>
-    <div class="text-center">
-    <a href="jogos.html" class="back-to-games">Voltar aos Jogos</a>
-</div>
-
-    <!-- Rodapé -->
+<!-- Adicione esta seção após a sinopse ou onde desejar no seu HTML -->
+<!-- Adicione esta seção após a sinopse ou onde desejar no seu HTML -->
+<section class="gallery-section py-5">
+    <div class="d-flex justify-content-center">
+        <div class="synopsis" style="max-width: 1200px;">
+            <h3>Galeria de Mídia</h3>
+            
+            <!-- Abas para alternar entre Imagens e Vídeos -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="mediaTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="images-tab" data-toggle="tab" href="#images" role="tab">Imagens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab">Vídeos</a>
+                </li>
+            </ul>
+            
+            <div class="highlight">
+                <div class="tab-content" id="mediaTabsContent">
+                    <!-- Tab de Imagens -->
+                    <div class="tab-pane fade show active" id="images" role="tabpanel">
+                        <div class="gallery-container">
+                            <div class="gallery-grid" id="galleryGrid"></div>
+                            
+                            <!-- Modal para imagem expandida -->
+                            <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content bg-dark border border-secondary">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img id="expandedImage" class="img-fluid" src="" alt="Imagem expandida">
+                                        </div>
+                                        <div class="modal-footer border-0 justify-content-between">
+                                            <button class="btn btn-pap" id="prevBtn">&larr; Anterior</button>
+                                            <span id="imageCounter" class="text-light"></span>
+                                            <button class="btn btn-pap" id="nextBtn">Próxima &rarr;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab de Vídeos -->
+                    <div class="tab-pane fade" id="videos" role="tabpanel">
+                        <div class="video-gallery-container">
+                            <div class="video-gallery-grid" id="videoGalleryGrid"></div>
+                            
+                            <!-- Modal para vídeo expandido -->
+                            <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content bg-dark border border-secondary">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <video id="expandedVideo" class="img-fluid" controls>
+                                                <source src="" type="video/mp4">
+                                                Seu navegador não suporta vídeos HTML5.
+                                            </video>
+                                        </div>
+                                        <div class="modal-footer border-0 justify-content-between">
+                                            <button class="btn btn-pap" id="prevVideoBtn">&larr; Anterior</button>
+                                            <span id="videoCounter" class="text-light"></span>
+                                            <button class="btn btn-pap" id="nextVideoBtn">Próximo &rarr;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <footer>
         <div class="footer-content">
             <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
             <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
         </div>
+        
     </footer>
 
-    <!-- Scripts necessários para o Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Script do Quiz -->
+    
     <script>
-        const questions = [
-            {
-                question: "Quando enfrentas a perda, como reages?",
-                options: [
-                    { text: "Sofro em silêncio, mas mantenho a esperança viva.", character: "Amélia" },
-                    { text: "Transformo a dor em poder e avanço sem olhar para trás.", character: "Baal" },
-                    { text: "Aceito que tudo faz parte de um plano maior.", character: "Feiticeiro" },
-                    { text: "Carrego o sofrimento dos outros junto ao meu próprio.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "O que significa 'força' para ti?",
-                options: [
-                    { text: "Continuar a amar, mesmo no meio da destruição.", character: "Amélia" },
-                    { text: "Impor a minha vontade sobre o mundo.", character: "Baal" },
-                    { text: "Conhecer os segredos que os outros ignoram.", character: "Feiticeiro" },
-                    { text: "Proteger os frágeis, mesmo que me quebre no processo.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Numa noite sem estrelas, o que procurarias?",
-                options: [
-                    { text: "Um raio de esperança esquecido no escuro.", character: "Amélia" },
-                    { text: "Oportunidade para moldar o mundo a meu favor.", character: "Baal" },
-                    { text: "Um sentido oculto por detrás da ausência de luz.", character: "Feiticeiro" },
-                    { text: "Um abrigo seguro para mim e para os que amo.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Se te fosse dada a escolha entre justiça e misericórdia, o que escolherias?",
-                options: [
-                    { text: "Misericórdia. Sempre.", character: "Amélia" },
-                    { text: "Justiça. Mesmo que brutal.", character: "Baal" },
-                    { text: "A verdade, acima dos dois.", character: "Feiticeiro" },
-                    { text: "O alívio para quem sofre, mesmo que injusto.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Qual é o teu maior medo?",
-                options: [
-                    { text: "Perder a inocência e tornar-me amarga.", character: "Amélia" },
-                    { text: "Ser fraco perante o mundo.", character: "Baal" },
-                    { text: "Ser mal interpretado e esquecido.", character: "Feiticeiro" },
-                    { text: "Não conseguir salvar quem amo.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Quando te traem, o que nasce dentro de ti?",
-                options: [
-                    { text: "Uma tristeza silenciosa.", character: "Amélia" },
-                    { text: "Um desejo de vingança fria.", character: "Baal" },
-                    { text: "Uma aceitação amarga.", character: "Feiticeiro" },
-                    { text: "Um medo profundo de confiar novamente.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Se fosses comparado a um elemento da natureza, serias:",
-                options: [
-                    { text: "A névoa suave que se ergue depois da tempestade.", character: "Amélia" },
-                    { text: "A lâmina do vento que corta sem piedade.", character: "Baal" },
-                    { text: "A raiz escondida sob a terra.", character: "Feiticeiro" },
-                    { text: "A rocha que suporta o peso do mundo.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Qual destas frases ecoa mais fundo no teu coração?",
-                options: [
-                    { text: "Mesmo ferido, continuo a acreditar na luz.", character: "Amélia" },
-                    { text: "O mundo é dos que têm coragem para tomá-lo.", character: "Baal" },
-                    { text: "Não existe acaso — apenas caminhos ocultos.", character: "Feiticeiro" },
-                    { text: "Não nasci para grandes feitos, mas para proteger pequenos milagres.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Como vês o amor?",
-                options: [
-                    { text: "Um sentimento puro que resiste ao tempo.", character: "Amélia" },
-                    { text: "Uma fraqueza perigosa.", character: "Baal" },
-                    { text: "Uma energia ancestral.", character: "Feiticeiro" },
-                    { text: "Um dever silencioso.", character: "Ângela" }
-                ]
-            },
-            {
-                question: "Diante da adversidade, o que te mantém de pé?",
-                options: [
-                    { text: "A memória daqueles que amo.", character: "Amélia" },
-                    { text: "O desejo de não ser derrotado.", character: "Baal" },
-                    { text: "A certeza de um propósito oculto.", character: "Feiticeiro" },
-                    { text: "A responsabilidade de proteger os que confiam em mim.", character: "Ângela" }
-                ]
-            }
-        ];
-
-        let currentQuestion = 0;
-        let scores = { "Amélia": 0, "Baal": 0, "Ângela": 0, "Feiticeiro": 0 };
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        function startQuiz() {
-            currentQuestion = 0;
-            scores = { "Amélia": 0, "Baal": 0, "Ângela": 0, "Feiticeiro": 0 };
-            document.getElementById('result').style.display = 'none';
-            showQuestion();
-        }
-
-        function showQuestion() {
-            const quizDiv = document.getElementById('quiz');
-            const q = questions[currentQuestion];
-            
-            // Calcula o progresso
-            const progressPercent = (currentQuestion / questions.length) * 100;
-            
-            let html = `
-                <div class="quiz-progress">
-                    <div class="quiz-progress-bar" style="width: ${progressPercent}%"></div>
-                </div>
-                <h2 style="font-family: 'Nanum Pen Script', cursive; font-size: 1.2rem;">${q.question}</h2>
-            `;
-            
-            // Embaralha as opções
-            const shuffledOptions = shuffleArray([...q.options]);
-            const topOptions = shuffledOptions.slice(0, 2);
-            const bottomOptions = shuffledOptions.slice(2, 4);
-            
-            html += `<div class="options-row">`;
-            
-            // Adiciona as duas primeiras opções
-            topOptions.forEach(option => {
-                html += `<button class="option" onclick="selectOption('${option.character}')">${option.text}</button>`;
+        // Navegação entre páginas
+        document.querySelectorAll('.bookmark').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                window.location.href = href;
             });
-            
-            html += `</div><div class="options-row">`;
-            
-            // Adiciona as duas últimas opções
-            bottomOptions.forEach(option => {
-                html += `<button class="option" onclick="selectOption('${option.character}')">${option.text}</button>`;
-            });
-            
-            html += `</div>`;
-            
-            quizDiv.innerHTML = html;
-        }
-
-        function selectOption(character) {
-            scores[character]++;
-            currentQuestion++;
-
-            if (currentQuestion < questions.length) {
-                showQuestion();
-            } else {
-                showResult();
-            }
-        }
-
-        function showResult() {
-            let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-
-            const descriptions = {
-                "Amélia": "És como a Amélia - cheia de imaginação e sonhos! O teu coração é puro e vês magia em tudo. Mas cuidado para não confiares demais em quem não merece!",
-                "Baal": "És como o Baal - forte e organizado! Gostas que tudo tenha a sua ordem e lugar. Mas lembra-te que às vezes é bom deixar as coisas um pouco desarrumadas!",
-                "Ângela": "És como a Ângela - amiga de todos! Sempre pronta para ajudar e proteger. Mas não te esqueças de cuidar de ti também, está bem?",
-                "Feiticeiro": "És como o Feiticeiro - inteligente e misterioso! Adoras aprender coisas novas e descobrir segredos. Mas não fiques só nos livros, vai brincar também!"
-            };
-
-            const characterImages = {
-                "Amélia": "icon-amelia.png",
-                "Baal": "icon-baal.png",
-                "Ângela": "icon-angy.png",
-                "Feiticeiro": "icon-feiticeiro.png"
-            };
-
-            const characterClasses = {
-                "Amélia": "amelia",
-                "Baal": "baal",
-                "Ângela": "angela",
-                "Feiticeiro": "feiticeiro"
-            };
-
-            document.getElementById('quiz').innerHTML = '';
-            const resultDiv = document.getElementById('result');
-            resultDiv.className = `result-${characterClasses[winner]}`;
-            resultDiv.innerHTML = `
-                <div class="result-content">
-                    <div class="character-icon">
-                        <img src="${characterImages[winner]}" alt="${winner}">
-                    </div>
-                    <div class="character-info">
-                        <h2>${winner}!</h2>
-                        <p style="font-family: 'Nanum Pen Script', cursive; font-size: 1rem;">${descriptions[winner]}</p>
-                        <button onclick="startQuiz()">Jogar Novamente</button>
-                    </div>
-                </div>
-            `;
-            resultDiv.style.display = 'block';
-        }
+        });
 
         // Destacar item ativo na navbar
         document.addEventListener('DOMContentLoaded', function() {
@@ -309,7 +170,245 @@
                     link.classList.add('active');
                 }
             });
+            
+            // Destacar bookmark ativo
+            document.querySelectorAll('.bookmark').forEach(bookmark => {
+                if (bookmark.getAttribute('href') === currentPage) {
+                    bookmark.classList.add('active');
+                }
+            });
         });
     </script>
+    <script>
+// Galeria de Imagens
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryGrid = document.getElementById('galleryGrid');
+    const totalImages = 71; // De lia1.png até lia71.png
+    
+    // Criar itens da galeria
+    for (let i = 1; i <= totalImages; i++) {
+        const imgPath = `lia${i}.png`;
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.dataset.index = i;
+        
+        const img = document.createElement('img');
+        img.src = imgPath;
+        img.alt = `Imagem ${i}`;
+        img.loading = 'lazy';
+        
+        galleryItem.appendChild(img);
+        galleryGrid.appendChild(galleryItem);
+        
+        // Adicionar evento de clique
+        galleryItem.addEventListener('click', function() {
+            openModal(i);
+        });
+    }
+    
+    // Modal functions
+    let currentModalIndex = 1;
+    const imageModal = $('#imageModal');
+    const expandedImage = document.getElementById('expandedImage');
+    const imageCounter = document.getElementById('imageCounter');
+    
+    function openModal(index) {
+        currentModalIndex = parseInt(index);
+        updateModalImage();
+        imageModal.modal('show');
+    }
+    
+    function updateModalImage() {
+        expandedImage.src = `lia${currentModalIndex}.png`;
+        imageCounter.textContent = `${currentModalIndex} / ${totalImages}`;
+    }
+    
+    // Navigation buttons
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        if (currentModalIndex > 1) {
+            currentModalIndex--;
+            updateModalImage();
+        }
+    });
+    
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        if (currentModalIndex < totalImages) {
+            currentModalIndex++;
+            updateModalImage();
+        }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (!imageModal.hasClass('show')) return;
+        
+        if (e.key === 'ArrowLeft' && currentModalIndex > 1) {
+            currentModalIndex--;
+            updateModalImage();
+        } else if (e.key === 'ArrowRight' && currentModalIndex < totalImages) {
+            currentModalIndex++;
+            updateModalImage();
+        } else if (e.key === 'Escape') {
+            imageModal.modal('hide');
+        }
+    });
+});
+</script>
+<script>
+// Galeria de Mídia
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuração das abas
+    $('#mediaTabs a').on('click', function(e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+    
+    // Galeria de Imagens
+    const galleryGrid = document.getElementById('galleryGrid');
+    const totalImages = 71; // De lia1.png até lia71.png
+    
+    // Criar itens da galeria de imagens
+    for (let i = 1; i <= totalImages; i++) {
+        const imgPath = `lia${i}.png`;
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.dataset.index = i;
+        
+        const img = document.createElement('img');
+        img.src = imgPath;
+        img.alt = `Imagem ${i}`;
+        img.loading = 'lazy';
+        
+        galleryItem.appendChild(img);
+        galleryGrid.appendChild(galleryItem);
+        
+        galleryItem.addEventListener('click', function() {
+            openImageModal(i);
+        });
+    }
+    
+    // Galeria de Vídeos
+    const videoGalleryGrid = document.getElementById('videoGalleryGrid');
+    const videoFiles = ['video1.mp4', 'video2.mp4', 'video3.mp4', 'video4.mp4']; // Adicione seus vídeos aqui
+    
+    // Criar itens da galeria de vídeos
+    videoFiles.forEach((videoFile, index) => {
+        const videoItem = document.createElement('div');
+        videoItem.className = 'video-gallery-item';
+        videoItem.dataset.index = index;
+        
+        const video = document.createElement('video');
+        video.src = videoFile;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        
+        videoItem.appendChild(video);
+        videoGalleryGrid.appendChild(videoItem);
+        
+        videoItem.addEventListener('click', function() {
+            openVideoModal(index);
+        });
+    });
+    
+    // Modal de Imagens
+    let currentImageIndex = 1;
+    const imageModal = $('#imageModal');
+    const expandedImage = document.getElementById('expandedImage');
+    const imageCounter = document.getElementById('imageCounter');
+    
+    function openImageModal(index) {
+        currentImageIndex = parseInt(index);
+        updateImageModal();
+        imageModal.modal('show');
+    }
+    
+    function updateImageModal() {
+        expandedImage.src = `lia${currentImageIndex}.png`;
+        imageCounter.textContent = `${currentImageIndex} / ${totalImages}`;
+    }
+    
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        if (currentImageIndex > 1) {
+            currentImageIndex--;
+            updateImageModal();
+        }
+    });
+    
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        if (currentImageIndex < totalImages) {
+            currentImageIndex++;
+            updateImageModal();
+        }
+    });
+    
+    // Modal de Vídeos
+    let currentVideoIndex = 0;
+    const videoModal = $('#videoModal');
+    const expandedVideo = document.getElementById('expandedVideo');
+    const videoCounter = document.getElementById('videoCounter');
+    
+    function openVideoModal(index) {
+        currentVideoIndex = parseInt(index);
+        updateVideoModal();
+        videoModal.modal('show');
+        
+        // Pausar todos os outros vídeos na galeria
+        document.querySelectorAll('.video-gallery-item video').forEach(v => v.pause());
+    }
+    
+    function updateVideoModal() {
+        expandedVideo.src = videoFiles[currentVideoIndex];
+        expandedVideo.play();
+        videoCounter.textContent = `${currentVideoIndex + 1} / ${videoFiles.length}`;
+    }
+    
+    document.getElementById('prevVideoBtn').addEventListener('click', function() {
+        if (currentVideoIndex > 0) {
+            currentVideoIndex--;
+            updateVideoModal();
+        }
+    });
+    
+    document.getElementById('nextVideoBtn').addEventListener('click', function() {
+        if (currentVideoIndex < videoFiles.length - 1) {
+            currentVideoIndex++;
+            updateVideoModal();
+        }
+    });
+    
+    // Fechar vídeo quando o modal é fechado
+    videoModal.on('hidden.bs.modal', function() {
+        expandedVideo.pause();
+    });
+    
+    // Navegação por teclado
+    document.addEventListener('keydown', function(e) {
+        if (imageModal.hasClass('show')) {
+            if (e.key === 'ArrowLeft' && currentImageIndex > 1) {
+                currentImageIndex--;
+                updateImageModal();
+            } else if (e.key === 'ArrowRight' && currentImageIndex < totalImages) {
+                currentImageIndex++;
+                updateImageModal();
+            } else if (e.key === 'Escape') {
+                imageModal.modal('hide');
+            }
+        }
+        
+        if (videoModal.hasClass('show')) {
+            if (e.key === 'ArrowLeft' && currentVideoIndex > 0) {
+                currentVideoIndex--;
+                updateVideoModal();
+            } else if (e.key === 'ArrowRight' && currentVideoIndex < videoFiles.length - 1) {
+                currentVideoIndex++;
+                updateVideoModal();
+            } else if (e.key === 'Escape') {
+                videoModal.modal('hide');
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
