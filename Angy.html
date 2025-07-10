@@ -145,6 +145,7 @@
             <p>&copy; 2024/2025 Ecos de Sofrimento.</p>
             <p>Este site pertence a um Projeto de Aptidão Profissional do curso de multimédia.</p>
         </div>
+        
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -186,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Criar itens da galeria
     for (let i = 1; i <= totalImages; i++) {
-        const imgPath = `lia${i}.jpg`;
+        const imgPath = `lia${i}.png`;
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
         galleryItem.dataset.index = i;
@@ -218,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateModalImage() {
-        expandedImage.src = `lia${currentModalIndex}.png`;
+        expandedImage.src = `lia${currentModalIndex}.jpg`;
         imageCounter.textContent = `${currentModalIndex} / ${totalImages}`;
     }
     
@@ -253,86 +254,161 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<!-- Adicione esta seção após a sinopse ou onde desejar no seu HTML -->
-<section class="gallery-section py-5">
-    <div class="d-flex justify-content-center">
-        <div class="synopsis" style="max-width: 1200px;">
-            <h3>Galeria de Mídia</h3>
-            
-            <!-- Abas para alternar entre Imagens e Vídeos -->
-            <ul class="nav nav-tabs justify-content-center mb-4" id="mediaTabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="images-tab" data-toggle="tab" href="#images" role="tab">Imagens</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab">Vídeos</a>
-                </li>
-            </ul>
-            
-            <div class="highlight">
-                <div class="tab-content" id="mediaTabsContent">
-                    <!-- Tab de Imagens -->
-                    <div class="tab-pane fade show active" id="images" role="tabpanel">
-                        <div class="gallery-container">
-                            <div class="gallery-grid" id="galleryGrid"></div>
-                            
-                            <!-- Modal para imagem expandida -->
-                            <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                    <div class="modal-content bg-dark border border-secondary">
-                                        <div class="modal-header border-0">
-                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body text-center">
-                                            <img id="expandedImage" class="img-fluid" src="" alt="Imagem expandida">
-                                        </div>
-                                        <div class="modal-footer border-0 justify-content-between">
-                                            <button class="btn btn-pap" id="prevBtn">&larr; Anterior</button>
-                                            <span id="imageCounter" class="text-light"></span>
-                                            <button class="btn btn-pap" id="nextBtn">Próxima &rarr;</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tab de Vídeos -->
-                    <div class="tab-pane fade" id="videos" role="tabpanel">
-                        <div class="video-gallery-container">
-                            <div class="video-gallery-grid" id="videoGalleryGrid"></div>
-                            
-                            <!-- Modal para vídeo expandido -->
-                            <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                    <div class="modal-content bg-dark border border-secondary">
-                                        <div class="modal-header border-0">
-                                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body text-center">
-                                            <video id="expandedVideo" class="img-fluid" controls>
-                                                <source src="" type="video/mp4">
-                                                Seu navegador não suporta vídeos HTML5.
-                                            </video>
-                                        </div>
-                                        <div class="modal-footer border-0 justify-content-between">
-                                            <button class="btn btn-pap" id="prevVideoBtn">&larr; Anterior</button>
-                                            <span id="videoCounter" class="text-light"></span>
-                                            <button class="btn btn-pap" id="nextVideoBtn">Próximo &rarr;</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<script>
+// Galeria de Mídia
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuração das abas
+    $('#mediaTabs a').on('click', function(e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+    
+    // Galeria de Imagens
+    const galleryGrid = document.getElementById('galleryGrid');
+    const totalImages = 71; // De lia1.png até lia71.png
+    
+    // Criar itens da galeria de imagens
+    for (let i = 1; i <= totalImages; i++) {
+        const imgPath = `lia${i}.png`;
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.dataset.index = i;
+        
+        const img = document.createElement('img');
+        img.src = imgPath;
+        img.alt = `Imagem ${i}`;
+        img.loading = 'lazy';
+        
+        galleryItem.appendChild(img);
+        galleryGrid.appendChild(galleryItem);
+        
+        galleryItem.addEventListener('click', function() {
+            openImageModal(i);
+        });
+    }
+    
+    // Galeria de Vídeos
+    const videoGalleryGrid = document.getElementById('videoGalleryGrid');
+    const videoFiles = ['1.mp4', '2.mp4', '3.mp4', '4.mp4']; // Adicione seus vídeos aqui
+    
+    // Criar itens da galeria de vídeos
+    videoFiles.forEach((videoFile, index) => {
+        const videoItem = document.createElement('div');
+        videoItem.className = 'video-gallery-item';
+        videoItem.dataset.index = index;
+        
+        const video = document.createElement('video');
+        video.src = videoFile;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        
+        videoItem.appendChild(video);
+        videoGalleryGrid.appendChild(videoItem);
+        
+        videoItem.addEventListener('click', function() {
+            openVideoModal(index);
+        });
+    });
+    
+    // Modal de Imagens
+    let currentImageIndex = 1;
+    const imageModal = $('#imageModal');
+    const expandedImage = document.getElementById('expandedImage');
+    const imageCounter = document.getElementById('imageCounter');
+    
+    function openImageModal(index) {
+        currentImageIndex = parseInt(index);
+        updateImageModal();
+        imageModal.modal('show');
+    }
+    
+    function updateImageModal() {
+        expandedImage.src = `lia${currentImageIndex}.png`;
+        imageCounter.textContent = `${currentImageIndex} / ${totalImages}`;
+    }
+    
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        if (currentImageIndex > 1) {
+            currentImageIndex--;
+            updateImageModal();
+        }
+    });
+    
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        if (currentImageIndex < totalImages) {
+            currentImageIndex++;
+            updateImageModal();
+        }
+    });
+    
+    // Modal de Vídeos
+    let currentVideoIndex = 0;
+    const videoModal = $('#videoModal');
+    const expandedVideo = document.getElementById('expandedVideo');
+    const videoCounter = document.getElementById('videoCounter');
+    
+    function openVideoModal(index) {
+        currentVideoIndex = parseInt(index);
+        updateVideoModal();
+        videoModal.modal('show');
+        
+        // Pausar todos os outros vídeos na galeria
+        document.querySelectorAll('.video-gallery-item video').forEach(v => v.pause());
+    }
+    
+    function updateVideoModal() {
+        expandedVideo.src = videoFiles[currentVideoIndex];
+        expandedVideo.play();
+        videoCounter.textContent = `${currentVideoIndex + 1} / ${videoFiles.length}`;
+    }
+    
+    document.getElementById('prevVideoBtn').addEventListener('click', function() {
+        if (currentVideoIndex > 0) {
+            currentVideoIndex--;
+            updateVideoModal();
+        }
+    });
+    
+    document.getElementById('nextVideoBtn').addEventListener('click', function() {
+        if (currentVideoIndex < videoFiles.length - 1) {
+            currentVideoIndex++;
+            updateVideoModal();
+        }
+    });
+    
+    // Fechar vídeo quando o modal é fechado
+    videoModal.on('hidden.bs.modal', function() {
+        expandedVideo.pause();
+    });
+    
+    // Navegação por teclado
+    document.addEventListener('keydown', function(e) {
+        if (imageModal.hasClass('show')) {
+            if (e.key === 'ArrowLeft' && currentImageIndex > 1) {
+                currentImageIndex--;
+                updateImageModal();
+            } else if (e.key === 'ArrowRight' && currentImageIndex < totalImages) {
+                currentImageIndex++;
+                updateImageModal();
+            } else if (e.key === 'Escape') {
+                imageModal.modal('hide');
+            }
+        }
+        
+        if (videoModal.hasClass('show')) {
+            if (e.key === 'ArrowLeft' && currentVideoIndex > 0) {
+                currentVideoIndex--;
+                updateVideoModal();
+            } else if (e.key === 'ArrowRight' && currentVideoIndex < videoFiles.length - 1) {
+                currentVideoIndex++;
+                updateVideoModal();
+            } else if (e.key === 'Escape') {
+                videoModal.modal('hide');
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
